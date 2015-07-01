@@ -1,0 +1,182 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EmailComposer\"><param name=\"android-package\" value=\"com.jcjee.plugins.EmailComposer\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"JPushPlugin\"><param name=\"android-package\" value=\"cn.jpush.phonegap.JPushPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "application": [
+                        {
+                            "xml": "<provider android:authorities=\"com.gugujiankong.app.plugins.emailcomposer.provider\" android:name=\"com.jcjee.plugins.EmailAttachmentProvider\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"com.gugujiankong.app.permission.JPUSH_MESSAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.SYSTEM_ALERT_WINDOW\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<permission android:name=\"com.gugujiankong.app.permission.JPUSH_MESSAGE\" android:protectionLevel=\"signature\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<activity android:configChanges=\"orientation|keyboardHidden\" android:name=\"cn.jpush.android.ui.PushActivity\" android:theme=\"@android:style/Theme.Translucent.NoTitleBar\"><intent-filter><action android:name=\"cn.jpush.android.ui.PushActivity\" /><category android:name=\"android.intent.category.DEFAULT\" /><category android:name=\"com.gugujiankong.app\" /></intent-filter></activity>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:enabled=\"true\" android:exported=\"false\" android:name=\"cn.jpush.android.service.DownloadService\"></service>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:enabled=\"true\" android:exported=\"false\" android:name=\"cn.jpush.android.service.PushService\"><intent-filter><action android:name=\"cn.jpush.android.intent.REGISTER\" /><action android:name=\"cn.jpush.android.intent.REPORT\" /><action android:name=\"cn.jpush.android.intent.PushService\" /><action android:name=\"cn.jpush.android.intent.PUSH_TIME\" /></intent-filter></service>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:enabled=\"true\" android:name=\"cn.jpush.android.service.PushReceiver\"><intent-filter android:priority=\"1000\"><action android:name=\"cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY\" /><category android:name=\"com.gugujiankong.app\" /></intent-filter><intent-filter><action android:name=\"android.intent.action.USER_PRESENT\" /><action android:name=\"android.net.conn.CONNECTIVITY_CHANGE\" /></intent-filter><intent-filter><action android:name=\"android.intent.action.PACKAGE_ADDED\" /><action android:name=\"android.intent.action.PACKAGE_REMOVED\" /><data android:scheme=\"package\" /></intent-filter></receiver>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:enabled=\"true\" android:name=\"cn.jpush.phonegap.MyReceiver\"><intent-filter android:priority=\"1000\"><action android:name=\"cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY\" /><category android:name=\"com.gugujiankong.app\" /></intent-filter><intent-filter><action android:name=\"cn.jpush.android.intent.REGISTRATION\" /><action android:name=\"cn.jpush.android.intent.UNREGISTRATION\" /><action android:name=\"cn.jpush.android.intent.MESSAGE_RECEIVED\" /><action android:name=\"cn.jpush.android.intent.NOTIFICATION_RECEIVED\" /><action android:name=\"cn.jpush.android.intent.NOTIFICATION_OPENED\" /><action android:name=\"cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK\" /><category android:name=\"com.gugujiankong.app\" /></intent-filter></receiver>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"cn.jpush.android.service.AlarmReceiver\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<meta-data android:name=\"JPUSH_CHANNEL\" android:value=\"developer-default\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<meta-data android:name=\"JPUSH_APPKEY\" android:value=\"0b9206cb506189af091feece\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.ionic.keyboard": {
+            "PACKAGE_NAME": "com.gugujiankong.app"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.gugujiankong.app"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.gugujiankong.app"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.gugujiankong.app"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.gugujiankong.app"
+        },
+        "com.jcjee.plugins.emailcomposer": {
+            "PACKAGE_NAME": "com.gugujiankong.app"
+        },
+        "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "com.gugujiankong.app"
+        },
+        "cn.jpush.phonegap.JPushPlugin": {
+            "PACKAGE_NAME": "com.gugujiankong.app"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.gugujiankong.app"
+        }
+    },
+    "dependent_plugins": {}
+}

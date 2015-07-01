@@ -1,0 +1,116 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'react-native-cli' ]
+2 info using npm@2.11.2
+3 info using node@v0.12.5
+4 verbose install initial load of /usr/local/lib/package.json
+5 verbose readDependencies loading dependencies from /usr/local/lib/package.json
+6 silly cache add args [ 'react-native-cli', null ]
+7 verbose cache add spec react-native-cli
+8 silly cache add parsed spec { raw: 'react-native-cli',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'react-native-cli',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 silly addNamed react-native-cli@*
+10 verbose addNamed "*" is a valid semver range for react-native-cli
+11 silly addNameRange { name: 'react-native-cli', range: '*', hasData: false }
+12 silly mapToRegistry name react-native-cli
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry http://registry.npmjs.org/
+15 silly mapToRegistry uri http://registry.npmjs.org/react-native-cli
+16 verbose addNameRange registry:http://registry.npmjs.org/react-native-cli not in flight; fetching
+17 verbose request uri http://registry.npmjs.org/react-native-cli
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 12:52:45 AM
+20 verbose request id 103ccd4f46e85dcc
+21 http request GET http://registry.npmjs.org/react-native-cli
+22 http 200 http://registry.npmjs.org/react-native-cli
+23 silly get cb [ 200,
+23 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+23 silly get     etag: '"DRRR9EUCZEZ7TR7Z40JI9YUF4"',
+23 silly get     'content-type': 'application/json',
+23 silly get     'cache-control': 'max-age=60',
+23 silly get     'content-length': '4838',
+23 silly get     'accept-ranges': 'bytes',
+23 silly get     date: 'Tue, 23 Jun 2015 16:52:46 GMT',
+23 silly get     via: '1.1 varnish',
+23 silly get     age: '0',
+23 silly get     connection: 'keep-alive',
+23 silly get     'x-served-by': 'cache-bma7031-BMA',
+23 silly get     'x-cache': 'MISS',
+23 silly get     'x-cache-hits': '0',
+23 silly get     'x-timer': 'S1435078366.704911,VS0,VE192',
+23 silly get     vary: 'Accept' } ]
+24 verbose get saving react-native-cli to /Users/Parry/.npm/registry.npmjs.org/react-native-cli/.cache.json
+25 silly addNameRange number 2 { name: 'react-native-cli', range: '*', hasData: true }
+26 silly addNameRange versions [ 'react-native-cli',
+26 silly addNameRange   [ '0.0.0', '0.0.1', '0.1.2', '0.1.3', '0.1.4' ] ]
+27 silly addNamed react-native-cli@0.1.4
+28 verbose addNamed "0.1.4" is a plain semver version for react-native-cli
+29 silly mapToRegistry name react-native-cli
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry http://registry.npmjs.org/
+32 silly mapToRegistry uri http://registry.npmjs.org/react-native-cli
+33 verbose addRemoteTarball http://registry.npmjs.org/react-native-cli/-/react-native-cli-0.1.4.tgz not in flight; adding
+34 verbose addRemoteTarball [ 'http://registry.npmjs.org/react-native-cli/-/react-native-cli-0.1.4.tgz',
+34 verbose addRemoteTarball   '2989108e113cf4e0b61097a0801f41f99220dd2a' ]
+35 info retry fetch attempt 1 at 12:52:47 AM
+36 info attempt registry request try #1 at 12:52:47 AM
+37 http fetch GET http://registry.npmjs.org/react-native-cli/-/react-native-cli-0.1.4.tgz
+38 http fetch 200 http://registry.npmjs.org/react-native-cli/-/react-native-cli-0.1.4.tgz
+39 silly fetchAndShaCheck shasum 2989108e113cf4e0b61097a0801f41f99220dd2a
+40 verbose addTmpTarball /var/folders/04/qpnfvtqx47s3t3f80xmclfz80000gn/T/npm-12503-be4a94a0/registry.npmjs.org/react-native-cli/-/react-native-cli-0.1.4.tgz not in flight; adding
+41 verbose addTmpTarball already have metadata; skipping unpack for react-native-cli@0.1.4
+42 silly cache afterAdd react-native-cli@0.1.4
+43 verbose afterAdd /Users/Parry/.npm/react-native-cli/0.1.4/package/package.json not in flight; writing
+44 verbose afterAdd /Users/Parry/.npm/react-native-cli/0.1.4/package/package.json written
+45 silly install resolved [ { name: 'react-native-cli',
+45 silly install resolved     version: '0.1.4',
+45 silly install resolved     description: 'The ReactNative cli tools',
+45 silly install resolved     main: 'index.js',
+45 silly install resolved     bin: { 'react-native': 'index.js' },
+45 silly install resolved     dependencies: { prompt: '^0.2.14' },
+45 silly install resolved     _id: 'react-native-cli@0.1.4',
+45 silly install resolved     scripts: {},
+45 silly install resolved     _shasum: '2989108e113cf4e0b61097a0801f41f99220dd2a',
+45 silly install resolved     _from: 'react-native-cli@*',
+45 silly install resolved     _npmVersion: '2.1.18',
+45 silly install resolved     _nodeVersion: '0.10.35',
+45 silly install resolved     _npmUser: { name: 'vjeux', email: 'vjeuxx@gmail.com' },
+45 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object] ],
+45 silly install resolved     dist:
+45 silly install resolved      { shasum: '2989108e113cf4e0b61097a0801f41f99220dd2a',
+45 silly install resolved        tarball: 'http://registry.npmjs.org/react-native-cli/-/react-native-cli-0.1.4.tgz' },
+45 silly install resolved     directories: {},
+45 silly install resolved     _resolved: 'http://registry.npmjs.org/react-native-cli/-/react-native-cli-0.1.4.tgz' } ]
+46 info install react-native-cli@0.1.4 into /usr/local/lib
+47 info installOne react-native-cli@0.1.4
+48 verbose installOne of react-native-cli to /usr/local/lib not in flight; installing
+49 warn locking Error: EACCES, open '/Users/Parry/.npm/_locks/react-native-cli-a444c604a39e8d3e.lock'
+49 warn locking     at Error (native)
+49 warn locking  /Users/Parry/.npm/_locks/react-native-cli-a444c604a39e8d3e.lock failed { [Error: EACCES, open '/Users/Parry/.npm/_locks/react-native-cli-a444c604a39e8d3e.lock']
+49 warn locking   errno: -13,
+49 warn locking   code: 'EACCES',
+49 warn locking   path: '/Users/Parry/.npm/_locks/react-native-cli-a444c604a39e8d3e.lock' }
+50 verbose stack Error: Attempt to unlock /usr/local/lib/node_modules/react-native-cli, which hasn't been locked
+50 verbose stack     at unlock (/usr/local/lib/node_modules/npm/lib/utils/locker.js:66:11)
+50 verbose stack     at cb (/usr/local/lib/node_modules/npm/lib/install.js:1017:5)
+50 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:1021:20
+50 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/locker.js:40:9
+50 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:149:38)
+50 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:177:38
+50 verbose stack     at FSReqWrap.oncomplete (fs.js:95:15)
+51 verbose cwd /Users/Parry/Desktop/GuGuJianKong/GuGuJianKongApp
+52 error Darwin 14.4.0
+53 error argv "node" "/usr/local/bin/npm" "install" "-g" "react-native-cli"
+54 error node v0.12.5
+55 error npm  v2.11.2
+56 error Attempt to unlock /usr/local/lib/node_modules/react-native-cli, which hasn't been locked
+57 error If you need help, you may report this error at:
+57 error     <https://github.com/npm/npm/issues>
+58 verbose exit [ 1, true ]

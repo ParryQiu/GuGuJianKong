@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.jcjee.plugins.emailcomposer"
+    version="1.4.6">
+    
+    <name>Email Composer with Attachments</name>
+    
+    <description>
+        &lt;p&gt;Email Composer with Attachments&lt;/p&gt;
+        
+        &lt;p&gt;Email Composer with Attachments. Modified from the original Phonegap plugin
+        to accept multiple attachments&lt;/p&gt;
+    </description>
+    
+    <license>MIT</license>
+    
+    <asset src="www/EmailComposer.js" target="EmailComposer.js" />
+    
+    <js-module src="www/EmailComposer.js" name="EmailComposer">
+        <clobbers target="EmailComposer" />
+    </js-module>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    
+    <!-- android -->
+    <platform name="android">
+
+        <!-- Cordova >= 3.0.0 -->
+        <config-file target="res/xml/config.xml" parent="/*">
+        	<feature name="EmailComposer">
+                <param name="android-package" value="com.jcjee.plugins.EmailComposer" />
+            </feature>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="application">
+            <provider android:name="com.jcjee.plugins.EmailAttachmentProvider" android:authorities="$PACKAGE_NAME.plugins.emailcomposer.provider"></provider>
+        </config-file>
+
+        <source-file src="src/android/EmailComposer.java" target-dir="src/com/jcjee/plugins" />
+        <source-file src="src/android/EmailAttachmentProvider.java" target-dir="src/com/jcjee/plugins" />
+        
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        
+        <!-- Cordova >= 3.0.0 -->
+        <config-file target="config.xml" parent="/*">
+        	<feature name="EmailComposer">
+                <param name="ios-package" value="EmailComposer" />
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/EmailComposer.h" />
+        <source-file src="src/ios/EmailComposer.m" />
+        <header-file src="src/ios/NSData+Base64.h" />
+        <source-file src="src/ios/NSData+Base64.m" />
+        
+        <!-- system frameworks -->
+        <framework src="MessageUI.framework" weak="true" />
+        
+    </platform>
+    
+</plugin>

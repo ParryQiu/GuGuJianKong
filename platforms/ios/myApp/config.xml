@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.gugujiankong.app" version="0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="AllowInlineMediaPlayback" value="false" />
+    <preference name="BackupWebStorage" value="cloud" />
+    <preference name="DisallowOverscroll" value="false" />
+    <preference name="EnableViewportScale" value="false" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
+    <preference name="GapBetweenPages" value="0" />
+    <preference name="PageLength" value="0" />
+    <preference name="PaginationBreakingMode" value="page" />
+    <preference name="PaginationMode" value="unpaginated" />
+    <feature name="LocalStorage">
+        <param name="ios-package" value="CDVLocalStorage" />
+    </feature>
+    <feature name="Keyboard">
+        <param name="ios-package" onload="true" value="IonicKeyboard" />
+    </feature>
+    <feature name="Console">
+        <param name="ios-package" value="CDVLogger" />
+    </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="EmailComposer">
+        <param name="ios-package" value="EmailComposer" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
+    <feature name="JPushPlugin">
+        <param name="ios-package" value="JPushPlugin" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="ios-package" value="CDVConnection" />
+    </feature>
+    <icon height="57" src="resources/ios/icon/icon.png" width="57" />
+    <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
+    <icon height="40" src="resources/ios/icon/icon-40.png" width="40" />
+    <icon height="80" src="resources/ios/icon/icon-40@2x.png" width="80" />
+    <icon height="50" src="resources/ios/icon/icon-50.png" width="50" />
+    <icon height="100" src="resources/ios/icon/icon-50@2x.png" width="100" />
+    <icon height="60" src="resources/ios/icon/icon-60.png" width="60" />
+    <icon height="120" src="resources/ios/icon/icon-60@2x.png" width="120" />
+    <icon height="180" src="resources/ios/icon/icon-60@3x.png" width="180" />
+    <icon height="72" src="resources/ios/icon/icon-72.png" width="72" />
+    <icon height="144" src="resources/ios/icon/icon-72@2x.png" width="144" />
+    <icon height="76" src="resources/ios/icon/icon-76.png" width="76" />
+    <icon height="152" src="resources/ios/icon/icon-76@2x.png" width="152" />
+    <icon height="29" src="resources/ios/icon/icon-small.png" width="29" />
+    <icon height="58" src="resources/ios/icon/icon-small@2x.png" width="58" />
+    <icon height="87" src="resources/ios/icon/icon-small@3x.png" width="87" />
+    <splash height="1136" src="resources/ios/splash/Default-568h@2x.png" width="640" />
+    <splash height="1334" src="resources/ios/splash/Default-667h.png" width="750" />
+    <splash height="2208" src="resources/ios/splash/Default-736h.png" width="1242" />
+    <splash height="1242" src="resources/ios/splash/Default-Landscape-736h.png" width="2208" />
+    <splash height="1536" src="resources/ios/splash/Default-Landscape@2x~ipad.png" width="2048" />
+    <splash height="768" src="resources/ios/splash/Default-Landscape~ipad.png" width="1024" />
+    <splash height="2048" src="resources/ios/splash/Default-Portrait@2x~ipad.png" width="1536" />
+    <splash height="1024" src="resources/ios/splash/Default-Portrait~ipad.png" width="768" />
+    <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
+    <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
+    <name>myApp</name>
+    <description>
+        专注于网站、服务器监控
+    </description>
+    <author email="qiupengyuan@gmail.com" href="http://gugujiankong.com/">
+      Parry
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
+</widget>

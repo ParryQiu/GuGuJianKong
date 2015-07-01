@@ -1,0 +1,16 @@
+<ion-view view-title="搜索引擎收录">
+    <ion-content class="padding">
+
+        <ion-refresher refreshing-icon="ion-loading-c" refreshing-text="云端获取数据中..." pulling-text="下拉刷新数据(每日更新数据)..." on-refresh="doRefresh()"></ion-refresher>
+
+        <div class="list card" ng-repeat="site in websitesearchengine">
+            <div class="item item-divider"><img ng-src="{{site.SiteIcon}}" class="smallicon">{{site.SiteName}}</div>
+            <div class="item item-body">
+
+                <div class="searchengineitem" ng-repeat="data in site.Datas"><img ng-src="{{data.Icon}}" class="moresmallicon">{{data.SearchEngineName}}收录：<b>{{data.RecordCount}}</b>条</div>
+
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

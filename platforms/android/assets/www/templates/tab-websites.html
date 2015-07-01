@@ -1,0 +1,13 @@
+<ion-view view-title="网站监控">
+    <ion-content>
+        <ion-refresher refreshing-icon="ion-loading-c" refreshing-text="云端获取数据中..." pulling-text="下拉刷新数据..." on-refresh="doRefresh()"></ion-refresher>
+        <ion-list>
+            <ion-item class="item-avatar" ng-repeat="site in sites">
+                <img ng-src="{{site.SiteIcon}}" style="top:26px;">
+                <h2>{{site.SiteName}}</h2>
+                <p>{{site.SiteUrl}}</p>
+                <p><img ng-src="{{site.StatusIcon}}" style="vertical-align: sub;">{{site.ShowStatusTitle}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

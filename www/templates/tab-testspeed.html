@@ -1,0 +1,16 @@
+<ion-view view-title="网站测速">
+    <ion-content class="padding">
+
+        <ion-refresher refreshing-icon="ion-loading-c" refreshing-text="云端获取数据中..." pulling-text="下拉刷新数据..." on-refresh="doRefresh()"></ion-refresher>
+
+        <div class="list card" ng-repeat="site in testspeeddata">
+            <div class="item item-divider"><img ng-src="{{site.SiteIcon}}" class="smallicon">{{site.SiteName}}</div>
+            <div class="item item-body">
+                <div>{{site.NodeName}}节点测速：<b>{{site.TimeSpanMilliSeconds}}毫秒</b>
+                </div>
+            </div>
+        </div>
+
+
+    </ion-content>
+</ion-view>

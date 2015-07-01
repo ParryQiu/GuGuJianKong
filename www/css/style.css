@@ -1,0 +1,39 @@
+.textaligncenter {
+    text-align: center;
+}
+
+.floatright {
+    float: right;
+}
+
+.margintop {
+    margin-top: 5px;
+}
+.smallicon
+{
+    width:20px;
+    height: 20px;
+    vertical-align: bottom;
+    margin-right: 3px;
+}
+
+.moresmallicon
+{
+    width:16px;
+    height: 16px;
+    vertical-align: bottom;
+    margin-right: 3px;
+}
+.searchengineitem
+{
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.scroll-refresher {
+    width: 100%;
+}
+
+.bar .back-button.hide, .bar .buttons .hide
+{
+    display: inline !important;
+}

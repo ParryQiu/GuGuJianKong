@@ -1,0 +1,60 @@
+<ion-view view-title="用户中心" cache-view="false" >
+    <ion-content>
+        <div class="list" id="notLogin">
+            <label class="item item-input">
+                <input type="email" placeholder="邮箱" ng-model="data.username">
+            </label>
+            <label class="item item-input">
+                <input type="password" placeholder="密码" ng-model="data.password">
+            </label>
+
+            <button class="button button-block button-balanced" ng-click="login()">
+                <i class="icon ion-log-in"></i>&nbsp;登录
+            </button>
+
+            <button class="button button-block button-stable" ng-click="goregister()">
+                <i class="icon ion-ios-personadd-outline"></i>&nbsp;新用户注册
+            </button>
+
+            <button class="button button-outline button-assertive" ng-click="forget()" style="width:100%;">
+                <i class="icon ion-ios-help-outline"></i>&nbsp;忘记密码？
+            </button>
+        </div>
+
+        <div id="hasLogon" style="display: none;">
+            <div class="list">
+                <ion-list>
+                    <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="site in sites"
+                              type="item-text-wrap">
+                        <img ng-src="{{site.SiteIcon}}">
+
+                        <h2>{{site.SiteName}}</h2>
+
+                        <p>{{site.SiteUrl}}</p>
+
+                        <ion-option-button class="button-assertive" ng-click="remove(site)">
+                            删除
+                        </ion-option-button>
+                    </ion-item>
+                </ion-list>
+                <a class="item textaligncenter" ng-click="addwebsite()">
+                    <i class="icon ion-ios-plus-empty"></i>&nbsp;新增监控网站
+                </a>
+            </div>
+            <div class="list">
+                <a class="item" ng-click="rateus()">
+                    给我们评分<i class="icon ion-ios-arrow-right floatright"></i>
+                </a>
+                <a class="item" ng-click="feedback()">
+                    意见反馈<i class="icon ion-ios-arrow-right floatright"></i>
+                </a>
+                <a class="item" ng-click="aboutus()">
+                    关于<i class="icon ion-ios-arrow-right floatright"></i>
+                </a>
+            </div>
+            <button class="button button-block button-assertive" ng-click="logout()">
+                <i class="icon ion-log-out"></i>&nbsp;注销
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

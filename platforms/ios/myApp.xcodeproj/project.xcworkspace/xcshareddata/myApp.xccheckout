@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>67087AE9-340F-4BA9-8F0A-44AD93A99548</string>
+	<key>IDESourceControlProjectName</key>
+	<string>myApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>ca937952-5a01-ad42-97dd-efaf5f959e11</key>
+		<string>https://115.29.170.7/svn/GuGuJianKong</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GuGuJianKongApp/platforms/ios/myApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>ca937952-5a01-ad42-97dd-efaf5f959e11</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>ca937952-5a01-ad42-97dd-efaf5f959e11</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ca937952-5a01-ad42-97dd-efaf5f959e11</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GuGuJianKong</string>
+		</dict>
+	</array>
+</dict>
+</plist>
