@@ -22,6 +22,8 @@ package com.gugujiankong.app;
 import android.os.Bundle;
 import org.apache.cordova.*;
 
+import cn.jpush.android.api.JPushInterface;
+
 
 public class MainActivity extends CordovaActivity
 {
@@ -31,5 +33,17 @@ public class MainActivity extends CordovaActivity
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
         loadUrl(launchUrl);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        JPushInterface.onResume(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        JPushInterface.onPause(this);
     }
 }

@@ -133,6 +133,10 @@ angular.module('starter.services', [])
                         if (loginResult.LoginStatus == 1) {
                             localStorage.signtoken = loginResult.SignToken;
                             localStorage.userid = loginResult.UserId;
+
+                            //设置客户端的别名，用于定向接收消息的推送
+                            window.plugins.jPushPlugin.setAlias("Client" + loginResult.UserId);
+
                             deferred.resolve('Welcome ' + name + '!');
                         } else {
                             deferred.reject('Wrong credentials.');
