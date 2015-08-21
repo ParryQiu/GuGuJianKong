@@ -1,12 +1,23 @@
 <ion-view view-title="网站监控">
     <ion-content>
-        <ion-refresher refreshing-icon="ion-loading-c" refreshing-text="云端获取数据中..." pulling-text="下拉刷新数据..." on-refresh="doRefresh()"></ion-refresher>
+        <ion-refresher refreshing-icon="ion-loading-c" refreshing-text="云端获取数据中..." pulling-text="下拉刷新数据..."
+                       on-refresh="doRefresh()"></ion-refresher>
         <ion-list>
             <ion-item class="item-avatar" ng-repeat="site in sites">
                 <img ng-src="{{site.SiteIcon}}" style="top:26px;">
+
                 <h2>{{site.SiteName}}</h2>
+
                 <p>{{site.SiteUrl}}</p>
-                <p><img ng-src="{{site.StatusIcon}}" style="vertical-align: sub;">{{site.ShowStatusTitle}}</p>
+
+                <p>{{site.ShowStatusTitle}}</p>
+
+                <p><img ng-src="img/online.png" style="vertical-align: sub;">&nbsp;检测在线:&nbsp;{{site.OnlineCount}}次&nbsp;&nbsp;<img
+                        ng-src="img/offline.png" style="vertical-align: sub;">&nbsp;宕机:&nbsp;{{site.DownCount}}次
+                </p>
+
+                <p><img ng-src="img/percentage.png" style="vertical-align: sub;">连通率:&nbsp;{{site.ConnectionPercent}}%
+                </p>
             </ion-item>
         </ion-list>
     </ion-content>

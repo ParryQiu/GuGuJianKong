@@ -341,7 +341,6 @@ angular.module('starter.controllers', [])
         };
 
         $scope.rateus = function () {
-            console.log("rate click");
             if ($ionicPlatform.isIOS) {
                 window.open('itms-apps://itunes.apple.com/us/app/domainsicle-domain-name-search/id511364723?ls=1&mt=8'); // or itms://
             } else if ($ionicPlatform.isAndroid) {
