@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D2AAC07D0554694100DB518D"
-               BuildableName = "libCordova.a"
-               BlueprintName = "CordovaLib"
-               ReferencedContainer = "container:CordovaLib.xcodeproj">
+               BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
+               BuildableName = "GuGuJianKong.app"
+               BlueprintName = "GuGuJianKong"
+               ReferencedContainer = "container:GuGuJianKong.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,6 +29,15 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
+            BuildableName = "GuGuJianKong.app"
+            BlueprintName = "GuGuJianKong"
+            ReferencedContainer = "container:GuGuJianKong.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -39,15 +48,16 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D2AAC07D0554694100DB518D"
-            BuildableName = "libCordova.a"
-            BlueprintName = "CordovaLib"
-            ReferencedContainer = "container:CordovaLib.xcodeproj">
+            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
+            BuildableName = "GuGuJianKong.app"
+            BlueprintName = "GuGuJianKong"
+            ReferencedContainer = "container:GuGuJianKong.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +67,16 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D2AAC07D0554694100DB518D"
-            BuildableName = "libCordova.a"
-            BlueprintName = "CordovaLib"
-            ReferencedContainer = "container:CordovaLib.xcodeproj">
+            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
+            BuildableName = "GuGuJianKong.app"
+            BlueprintName = "GuGuJianKong"
+            ReferencedContainer = "container:GuGuJianKong.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

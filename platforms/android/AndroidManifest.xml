@@ -37,11 +37,6 @@
                 <action android:name="android.intent.action.USER_PRESENT" />
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.PACKAGE_ADDED" />-->
-                <!--<action android:name="android.intent.action.PACKAGE_REMOVED" />-->
-                <!--<data android:scheme="package" />-->
-            <!--</intent-filter>-->
         </receiver>
         <receiver android:enabled="true" android:name="cn.jpush.phonegap.MyReceiver">
             <intent-filter android:priority="1000">
@@ -61,6 +56,21 @@
         <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
         <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default" />
         <meta-data android:name="JPUSH_APPKEY" android:value="0b9206cb506189af091feece" />
+        <receiver android:enabled="true" android:name="cn.jpush.android.service.PushReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+                <category android:name="com.gugujiankong.app" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
     </application>
     <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="22" />
     <uses-permission android:name="com.gugujiankong.app.permission.JPUSH_MESSAGE" />
