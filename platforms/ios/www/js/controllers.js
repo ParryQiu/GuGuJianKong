@@ -1,25 +1,30 @@
 angular.module('starter.controllers', [])
 
     .controller('WebSitesCtrl', function ($scope, Websites, $ionicLoading, $state, $cordovaNetwork) {
+
         if (localStorage.haslogin != 1) {
             $state.go("tab.account");
         }
-        $ionicLoading.show({
-            template: '数据加载中...'
-        });
+        else{
 
-        Websites.all($scope).success(function (data) {
-            $ionicLoading.hide();
+            //注意：下面都注释掉了遮罩层，因为设备加载的时候，短暂的遮罩层就想一个短暂的黑屏一样，体验不好。
+            //$ionicLoading.show({
+            //    template: '数据加载中...'
+            //});
 
-        }).error(function (data) {
-            //添加失败
-            $ionicLoading.hide();
-        });
+            Websites.all($scope).success(function (data) {
+                //$ionicLoading.hide();
 
-        $scope.doRefresh = function () {
-            Websites.all($scope);
-            //Stop the ion-refresher from spinning
-            $scope.$broadcast('scroll.refreshComplete');
+            }).error(function (data) {
+                //添加失败
+                //$ionicLoading.hide();
+            });
+
+            $scope.doRefresh = function () {
+                Websites.all($scope);
+                //Stop the ion-refresher from spinning
+                $scope.$broadcast('scroll.refreshComplete');
+            }
         }
 
     })
@@ -29,16 +34,16 @@ angular.module('starter.controllers', [])
         if (localStorage.haslogin != 1) {
             $state.go("tab.account");
         }
-        $ionicLoading.show({
-            template: '数据加载中...'
-        });
+        //$ionicLoading.show({
+        //    template: '数据加载中...'
+        //});
 
         Websites.allTestSpeed($scope).success(function (data) {
-            $ionicLoading.hide();
+            //$ionicLoading.hide();
 
         }).error(function (data) {
             //添加失败
-            $ionicLoading.hide();
+            //$ionicLoading.hide();
         });
 
         $scope.doRefresh = function () {
@@ -133,12 +138,12 @@ angular.module('starter.controllers', [])
         }
 
         $scope.resetpassword = function () {
-            $ionicLoading.show({
-                template: '服务器处理中...'
-            });
             //请求API，重置密码
             var email = $scope.data.usermail;
             if (checkMail(email)) {
+                $ionicLoading.show({
+                    template: '服务器处理中...'
+                });
                 LoginService.resetpassword(email).success(function (data) {
                     //注册成功，提示一下用户
                     $ionicLoading.hide();
@@ -172,16 +177,16 @@ angular.module('starter.controllers', [])
         if (localStorage.haslogin != 1) {
             $state.go("tab.account");
         }
-        $ionicLoading.show({
-            template: '数据加载中...'
-        });
+        //$ionicLoading.show({
+        //    template: '数据加载中...'
+        //});
 
         Websites.allSearchEngine($scope).success(function (data) {
-            $ionicLoading.hide();
+            //$ionicLoading.hide();
 
         }).error(function (data) {
             //添加失败
-            $ionicLoading.hide();
+            //$ionicLoading.hide();
         });
 
         $scope.doRefresh = function () {
@@ -198,23 +203,7 @@ angular.module('starter.controllers', [])
         $scope.data = {};
 
         if (localStorage.haslogin == 1) {
-            $ionicLoading.show({
-                template: '数据加载中...'
-            });
-
-            Websites.all($scope).success(function (data) {
-                $ionicLoading.hide();
-                $("#notLogin").hide();
-                $("#hasLogon").show();
-
-            }).error(function (data) {
-                //添加失败
-                $ionicLoading.hide();
-            });
-        }
-        else {
-            $("#hasLogon").hide();
-            $("#notLogin").show();
+            $state.go("tab.accountlistitem");
         }
 
         $scope.remove = function (site) {
@@ -239,20 +228,8 @@ angular.module('starter.controllers', [])
             LoginService.loginUser($scope.data.username, $scope.data.password).success(function (data) {
                 //登录成功
                 localStorage.haslogin = 1;
-                //$window.location.reload(true);
-                $ionicLoading.show({
-                    template: '数据加载中...'
-                });
-
-                Websites.all($scope).success(function (data) {
-                    $ionicLoading.hide();
-                    $("#notLogin").hide();
-                    $("#hasLogon").show();
-
-                }).error(function (data) {
-                    //添加失败
-                    $ionicLoading.hide();
-                });
+                $ionicLoading.hide();
+                $state.go("tab.accountlistitem");
 
             }).error(function (data) {
                 localStorage.haslogin = 0
@@ -272,13 +249,81 @@ angular.module('starter.controllers', [])
             $state.go('register');
         }
 
+
+        //$scope.feedback = function () {
+        //    if (window.plugins && window.plugins.emailComposer) {
+        //        window.plugins.emailComposer.showEmailComposerWithCallback(function (result) {
+        //
+        //            },
+        //            "给咕咕监控的建议", // Subject
+        //            "",                      // Body
+        //            ["feedback@gugujiankong.com"],    // To
+        //            null,                    // CC
+        //            null,                    // BCC
+        //            false,                   // isHTML
+        //            null,                    // Attachments
+        //            null);                   // Attachment Data
+        //    }
+        //};
+
+        //$scope.rateus = function () {
+        //    if ($ionicPlatform.isIOS) {
+        //        window.open('itms-apps://itunes.apple.com/us/app/domainsicle-domain-name-search/id511364723?ls=1&mt=8'); // or itms://
+        //    } else if ($ionicPlatform.isAndroid) {
+        //        window.open('market://details?id=<package_name>');
+        //    }
+        //};
+        //
+        //$scope.aboutus = function () {
+        //    $state.go('about');
+        //};
+    })
+
+    .controller('AccountListItemCtrl', function ($scope, LoginService, $ionicPopup, $state, Websites, $ionicLoading, $window, $ionicPlatform) {
+
+        $scope.data = {};
+        if (localStorage.haslogin == 1) {
+            //$ionicLoading.show({
+            //    template: '数据加载中...'
+            //});
+
+            Websites.all($scope).success(function (data) {
+                //$ionicLoading.hide();
+
+            }).error(function (data) {
+                //添加失败
+                //$ionicLoading.hide();
+            });
+        }
+        else {
+            $state.go("tab.account");
+        }
+
+        $scope.remove = function (site) {
+            var confirmPopup = $ionicPopup.confirm({
+                title: '删除网站',
+                template: '确认删除您选定的监控网站吗？'
+            });
+            confirmPopup.then(function (res) {
+                if (res) {
+                    Websites.remove($scope.sites, site).success(function (data) {
+
+
+                    }).error(function (data) {
+                    });
+                } else {
+
+                }
+            });
+        }
+
         $scope.logout = function () {
-            localStorage.haslogin = 0;
-            $state.go($state.current);
-            $("#hasLogon").hide();
-            $("#notLogin").show();
+            localStorage.removeItem("haslogin");
             $scope.data.username = "";
             $scope.data.password = "";
+            localStorage.signtoken = "";
+            localStorage.userid = "";
+            $state.go("tab.account");
         }
 
         $scope.addwebsite = function () {
@@ -323,33 +368,4 @@ angular.module('starter.controllers', [])
                 console.log('Tapped!', res);
             });
         };
-
-        $scope.feedback = function () {
-            if (window.plugins && window.plugins.emailComposer) {
-                window.plugins.emailComposer.showEmailComposerWithCallback(function (result) {
-
-                    },
-                    "给咕咕监控的建议", // Subject
-                    "",                      // Body
-                    ["feedback@gugujiankong.com"],    // To
-                    null,                    // CC
-                    null,                    // BCC
-                    false,                   // isHTML
-                    null,                    // Attachments
-                    null);                   // Attachment Data
-            }
-        };
-
-        $scope.rateus = function () {
-            if ($ionicPlatform.isIOS) {
-                window.open('itms-apps://itunes.apple.com/us/app/domainsicle-domain-name-search/id511364723?ls=1&mt=8'); // or itms://
-            } else if ($ionicPlatform.isAndroid) {
-                window.open('market://details?id=<package_name>');
-            }
-        };
-
-        $scope.aboutus = function () {
-            $state.go('about');
-        };
     });
-

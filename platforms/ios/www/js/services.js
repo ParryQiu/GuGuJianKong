@@ -135,7 +135,27 @@ angular.module('starter.services', [])
                             localStorage.userid = loginResult.UserId;
 
                             //设置客户端的别名，用于定向接收消息的推送
-                            window.plugins.jPushPlugin.setAlias("Client" + loginResult.UserId);
+                            //window.plugins.jPushPlugin.setAlias("Client" + loginResult.UserId);
+
+                            var arrayObj = new Array("Tags" + loginResult.UserId);
+                            window.plugins.jPushPlugin.setTags(arrayObj);
+
+                            //上传设备ID
+                            //console.log("Begin - JPushPlugin:registrationID is " + data);
+                            //window.plugins.jPushPlugin.getRegistrationID(onGetRegistradionID);
+                            //var onGetRegistradionID = function (data) {
+                            //    try {
+                            //        console.log("JPushPlugin:registrationID is " + data);
+                            //        //ajax上传
+                            //        $http.jsonp("http://api.shequshangdian.com/account/Uploadregistrationid?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&registrationid=" + data + "&callback=JSON_CALLBACK")
+                            //            .success(function (response) {
+                            //            });
+                            //    }
+                            //    catch (exception) {
+                            //        console.log(exception);
+                            //    }
+                            //};
+                            //console.log("End - JPushPlugin:registrationID is " + data);
 
                             deferred.resolve('Welcome ' + name + '!');
                         } else {

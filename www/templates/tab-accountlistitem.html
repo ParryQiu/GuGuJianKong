@@ -1,0 +1,30 @@
+<ion-view view-title="用户中心" cache-view="false">
+    <ion-content>
+        <div id="hasLogon">
+            <div class="list" style="margin-bottom: 0px;padding-top: 0px;">
+                <ion-list>
+                    <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="site in sites"
+                              type="item-text-wrap">
+                        <img ng-src="{{site.SiteIcon}}">
+
+                        <h2>{{site.SiteName}}</h2>
+
+                        <p>{{site.SiteUrl}}</p>
+
+                        <ion-option-button class="button-assertive" ng-click="remove(site)">
+                            删除
+                        </ion-option-button>
+                    </ion-item>
+                </ion-list>
+                <a class="item textaligncenter" ng-click="addwebsite()">
+                    <i class="icon ion-ios-plus-empty"></i>&nbsp;新增监控网站
+                </a>
+            </div>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-assertive" ng-click="logout()">
+                <i class="icon ion-log-out"></i>&nbsp;注销
+            </button>
+        </div>
+    </ion-content>
+</ion-view>
