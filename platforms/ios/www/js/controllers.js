@@ -323,6 +323,11 @@ angular.module('starter.controllers', [])
             $scope.data.password = "";
             localStorage.signtoken = "";
             localStorage.userid = "";
+
+            //设置通知的配置为空，用户注销后不再接收通知
+            var arrayObj = new Array();
+            window.plugins.jPushPlugin.setTags(arrayObj);
+
             $state.go("tab.account");
         }
 
