@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		0617B4F6445E4FC7886296E5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3DA986F0EC4832BF9F773F /* CoreTelephony.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
