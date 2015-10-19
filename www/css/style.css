@@ -23,6 +23,7 @@
     height: 16px;
     vertical-align: bottom;
     margin-right: 3px;
+    vertical-align: text-bottom;
 }
 .searchengineitem
 {

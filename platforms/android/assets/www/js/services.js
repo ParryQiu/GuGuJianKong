@@ -6,7 +6,7 @@ angular.module('starter.services', [])
                 var d = $q.defer();
                 var promise = d.promise;
 
-                $http.jsonp("http://api.shequshangdian.com/website/GetMyWebsites?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
+                $http.jsonp("http://api.gugujiankong.com/website/GetMyWebsites?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
                     .success(function (data) {
                         $scope.sites = data;
                         d.resolve(data);
@@ -29,7 +29,7 @@ angular.module('starter.services', [])
                 var d = $q.defer();
                 var promise = d.promise;
 
-                $http.jsonp("http://api.shequshangdian.com/website/GetAllSitesTestSpeed?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
+                $http.jsonp("http://api.gugujiankong.com/website/GetAllSitesTestSpeed?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
                     .success(function (data) {
                         $scope.testspeeddata = data;
                         d.resolve(data);
@@ -52,7 +52,7 @@ angular.module('starter.services', [])
                 var d = $q.defer();
                 var promise = d.promise;
 
-                $http.jsonp("http://api.shequshangdian.com/website/GetAllSitesSearchEngine?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
+                $http.jsonp("http://api.gugujiankong.com/website/GetAllSitesSearchEngine?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
                     .success(function (data) {
                         $scope.websitesearchengine = data;
                         d.resolve(data);
@@ -76,7 +76,7 @@ angular.module('starter.services', [])
                 var d = $q.defer();
                 var promise = d.promise;
 
-                $http.jsonp("http://api.shequshangdian.com/website/AddWebsite?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&url=" + $scope.data.siteurl + "&name=" + $scope.data.sitename + "&callback=JSON_CALLBACK")
+                $http.jsonp("http://api.gugujiankong.com/website/AddWebsite?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&url=" + $scope.data.siteurl + "&name=" + $scope.data.sitename + "&callback=JSON_CALLBACK")
                     .success(function (data) {
                         d.resolve(data);
                     })
@@ -100,7 +100,7 @@ angular.module('starter.services', [])
                 var deferred = $q.defer();
                 var promise = deferred.promise;
                 //ajax请求
-                $http.jsonp("http://api.shequshangdian.com/website/DeleteWebsite?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&siteId=" + site.SiteId + "&callback=JSON_CALLBACK")
+                $http.jsonp("http://api.gugujiankong.com/website/DeleteWebsite?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&siteId=" + site.SiteId + "&callback=JSON_CALLBACK")
                     .success(function (response) {
                         //UI删除
                         allsites.splice(allsites.indexOf(site), 1);
@@ -127,7 +127,7 @@ angular.module('starter.services', [])
 
                 var loginResult = new Object();
                 //ajax请求
-                $http.jsonp("http://api.shequshangdian.com/account/Login?email=" + name + "&password=" + pw + "&callback=JSON_CALLBACK")
+                $http.jsonp("http://api.gugujiankong.com/account/Login?email=" + name + "&password=" + pw + "&callback=JSON_CALLBACK")
                     .success(function (response) {
                         loginResult = response;
                         if (loginResult.LoginStatus == 1) {
@@ -135,7 +135,27 @@ angular.module('starter.services', [])
                             localStorage.userid = loginResult.UserId;
 
                             //设置客户端的别名，用于定向接收消息的推送
-                            window.plugins.jPushPlugin.setAlias("Client" + loginResult.UserId);
+                            //window.plugins.jPushPlugin.setAlias("Client" + loginResult.UserId);
+
+                            var arrayObj = new Array("Tags" + loginResult.UserId);
+                            window.plugins.jPushPlugin.setTags(arrayObj);
+
+                            //上传设备ID
+                            //console.log("Begin - JPushPlugin:registrationID is " + data);
+                            //window.plugins.jPushPlugin.getRegistrationID(onGetRegistradionID);
+                            //var onGetRegistradionID = function (data) {
+                            //    try {
+                            //        console.log("JPushPlugin:registrationID is " + data);
+                            //        //ajax上传
+                            //        $http.jsonp("http://api.gugujiankong.com/account/Uploadregistrationid?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&registrationid=" + data + "&callback=JSON_CALLBACK")
+                            //            .success(function (response) {
+                            //            });
+                            //    }
+                            //    catch (exception) {
+                            //        console.log(exception);
+                            //    }
+                            //};
+                            //console.log("End - JPushPlugin:registrationID is " + data);
 
                             deferred.resolve('Welcome ' + name + '!');
                         } else {
@@ -158,7 +178,7 @@ angular.module('starter.services', [])
                 var deferred = $q.defer();
                 var promise = deferred.promise;
                 //ajax请求
-                $http.jsonp("http://api.shequshangdian.com/account/Register?email=" + email + "&username=" + name + "&password=" + password + "&callback=JSON_CALLBACK")
+                $http.jsonp("http://api.gugujiankong.com/account/Register?email=" + email + "&username=" + name + "&password=" + password + "&callback=JSON_CALLBACK")
                     .success(function (response) {
                         if (response == 1) {
                             deferred.resolve('register successfully');
@@ -180,7 +200,7 @@ angular.module('starter.services', [])
                 var deferred = $q.defer();
                 var promise = deferred.promise;
                 //ajax请求
-                $http.jsonp("http://api.shequshangdian.com/account/resetpassword?email=" + email + "&callback=JSON_CALLBACK")
+                $http.jsonp("http://api.gugujiankong.com/account/resetpassword?email=" + email + "&callback=JSON_CALLBACK")
                     .success(function (response) {
                         if (response == 1) {
                             deferred.resolve('reset password successfully');

@@ -16,12 +16,30 @@ angular.module('starter', ['ionic', 'ui.router', 'starter.controllers', 'starter
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
             if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+                cordova.plugins.Keyboard.disableScroll(true);
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             }
             if (window.StatusBar) {
                 // org.apache.cordova.statusbar required
                 StatusBar.styleLightContent();
             }
+
+            // System events
+            document.addEventListener("resume", resume, false);
+
+            function resume() {
+                if(window.plugins.jPushPlugin.isPlatformIOS())
+                {
+                    window.plugins.jPushPlugin.setBadge(0);
+                    window.plugins.jPushPlugin.setApplicationIconBadgeNumber(0);
+                }
+                else if(window.plugins.jPushPlugin.isAndroid())
+                {
+                    window.plugins.jPushPlugin.setLatestNotificationNum(3);
+                    window.plugins.jPushPlugin.clearAllNotification();
+                }
+            }
+
             //判断网络状态
             document.addEventListener("deviceready", function () {
 
@@ -48,6 +66,7 @@ angular.module('starter', ['ionic', 'ui.router', 'starter.controllers', 'starter
 
             }, false);
         });
+
     })
 
     .config(function ($stateProvider, $urlRouterProvider) {
@@ -107,6 +126,17 @@ angular.module('starter', ['ionic', 'ui.router', 'starter.controllers', 'starter
                     'tab-account': {
                         templateUrl: 'templates/tab-account.html',
                         controller: 'AccountCtrl'
+                    }
+                }
+            })
+
+            .state('tab.accountlistitem', {
+                url: '/accountlistitem',
+                cache: false,
+                views: {
+                    'tab-account': {
+                        templateUrl: 'templates/tab-accountlistitem.html',
+                        controller: 'AccountListItemCtrl'
                     }
                 }
             })

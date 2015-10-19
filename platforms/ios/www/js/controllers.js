@@ -6,18 +6,17 @@ angular.module('starter.controllers', [])
             $state.go("tab.account");
         }
         else{
-
             //注意：下面都注释掉了遮罩层，因为设备加载的时候，短暂的遮罩层就想一个短暂的黑屏一样，体验不好。
-            //$ionicLoading.show({
-            //    template: '数据加载中...'
-            //});
+            $ionicLoading.show({
+                template: '数据加载中...'
+            });
 
             Websites.all($scope).success(function (data) {
-                //$ionicLoading.hide();
+                $ionicLoading.hide();
 
             }).error(function (data) {
                 //添加失败
-                //$ionicLoading.hide();
+                $ionicLoading.hide();
             });
 
             $scope.doRefresh = function () {
@@ -34,16 +33,16 @@ angular.module('starter.controllers', [])
         if (localStorage.haslogin != 1) {
             $state.go("tab.account");
         }
-        //$ionicLoading.show({
-        //    template: '数据加载中...'
-        //});
+        $ionicLoading.show({
+            template: '数据加载中...'
+        });
 
         Websites.allTestSpeed($scope).success(function (data) {
-            //$ionicLoading.hide();
+            $ionicLoading.hide();
 
         }).error(function (data) {
             //添加失败
-            //$ionicLoading.hide();
+            $ionicLoading.hide();
         });
 
         $scope.doRefresh = function () {
@@ -177,16 +176,16 @@ angular.module('starter.controllers', [])
         if (localStorage.haslogin != 1) {
             $state.go("tab.account");
         }
-        //$ionicLoading.show({
-        //    template: '数据加载中...'
-        //});
+        $ionicLoading.show({
+            template: '数据加载中...'
+        });
 
         Websites.allSearchEngine($scope).success(function (data) {
-            //$ionicLoading.hide();
+            $ionicLoading.hide();
 
         }).error(function (data) {
             //添加失败
-            //$ionicLoading.hide();
+            $ionicLoading.hide();
         });
 
         $scope.doRefresh = function () {
@@ -283,16 +282,16 @@ angular.module('starter.controllers', [])
 
         $scope.data = {};
         if (localStorage.haslogin == 1) {
-            //$ionicLoading.show({
-            //    template: '数据加载中...'
-            //});
+            $ionicLoading.show({
+                template: '数据加载中...'
+            });
 
             Websites.all($scope).success(function (data) {
-                //$ionicLoading.hide();
+                $ionicLoading.hide();
 
             }).error(function (data) {
                 //添加失败
-                //$ionicLoading.hide();
+                $ionicLoading.hide();
             });
         }
         else {
@@ -334,8 +333,8 @@ angular.module('starter.controllers', [])
         $scope.addwebsite = function () {
             $scope.data = {}
             var myPopup = $ionicPopup.show({
-                template: '<input type="text" ng-model="data.siteurl" placeholder="监控网站Url">' +
-                '<input type="text" ng-model="data.sitename" placeholder="监控网站昵称（可选）" class="margintop">',
+                template: '<input type="text" ng-model="data.siteurl" placeholder="网站Url">' +
+                '<input type="text" ng-model="data.sitename" placeholder="网站昵称（不填则自动获取）" class="margintop">',
                 title: '新增监控网站',
                 scope: $scope,
                 buttons: [

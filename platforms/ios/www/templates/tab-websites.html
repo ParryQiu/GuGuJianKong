@@ -4,21 +4,20 @@
                        on-refresh="doRefresh()"></ion-refresher>
         <ion-list>
             <ion-item class="item-avatar" ng-repeat="site in sites">
-                <img ng-src="{{site.SiteIcon}}" style="top:26px;">
+                <img ng-src="{{site.SiteIcon}}">
 
                 <h2>{{site.SiteName}}</h2>
 
                 <p>{{site.SiteUrl}}</p>
+                <p><img ng-src="img/percentage.png" style="vertical-align: sub;">连通率:&nbsp;{{site.ConnectionPercent}}%
+                </p>
 
-                <p>{{site.ShowStatusTitle}}</p>
+                <p><img ng-src="img/continue_online.png" style="vertical-align: sub;">&nbsp;{{site.ShowStatusTitle}}</p>
 
-                <p>{{site.LastDownTitle}}</p>
+                <p style="{{site.ShowLastDownStyle}}"><img ng-src="img/last_offline.png" style="vertical-align: sub;">&nbsp;{{site.LastDownTitle}}</p>
 
                 <p><img ng-src="img/online.png" style="vertical-align: sub;">&nbsp;检测在线:&nbsp;{{site.OnlineCount}}次&nbsp;&nbsp;<img
                         ng-src="img/offline.png" style="vertical-align: sub;">&nbsp;宕机:&nbsp;{{site.DownCount}}次
-                </p>
-
-                <p><img ng-src="img/percentage.png" style="vertical-align: sub;">连通率:&nbsp;{{site.ConnectionPercent}}%
                 </p>
             </ion-item>
         </ion-list>
