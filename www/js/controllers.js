@@ -194,6 +194,13 @@ angular.module('starter.controllers', [])
             $scope.$broadcast('scroll.refreshComplete');
         }
 
+        $scope.series = ['百度收录', '360搜索收录'];
+
+        $scope.data = [
+            [65, 59, 80, 81, 56, 55, 40],
+            [28, 48, 40, 19, 86, 27, 90]
+        ];
+
 
     })
 
