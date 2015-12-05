@@ -10,7 +10,7 @@ GuGuJianKong App for website online monitor, implemented using [Ionic Framework]
 * support iPhone, iPad, Android platfrom. / 支持 iPhone、iPad、Android 平台。
 
 ## Official Website / 官网 
-<a href="http://gugujiankong.com" target="_blank" title="Official Website / 官网">http://gugujiankong.com</a>
+[gugujiankong.com](http://gugujiankong.com "Official Website / 官网")
 
 ## App Screenshot /  App截图
 ###### iPhone platform screenshot / iPhone 平台截图
