@@ -1,25 +1,30 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ca937952-5a01-ad42-97dd-efaf5f959e11",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "74A22E14AAF64DB931E921483B5931E4D241EFE7",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
-    "ca937952-5a01-ad42-97dd-efaf5f959e11" : {
+    "74A22E14AAF64DB931E921483B5931E4D241EFE7" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "ca937952-5a01-ad42-97dd-efaf5f959e11" : 0
+    "74A22E14AAF64DB931E921483B5931E4D241EFE7" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5B131792-322F-43FC-8DC5-B6349CC82F97",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "ca937952-5a01-ad42-97dd-efaf5f959e11" : "GuGuJianKong\/"
+    "74A22E14AAF64DB931E921483B5931E4D241EFE7" : "GuGuJianKongApp\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "GuGuJianKong",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GuGuJianKongApp\/platforms\/ios\/GuGuJianKong.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "platforms\/ios\/GuGuJianKong.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/115.29.170.7\/svn\/GuGuJianKong",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ca937952-5a01-ad42-97dd-efaf5f959e11"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "74A22E14AAF64DB931E921483B5931E4D241EFE7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ParryQiu\/GuGuJianKong.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "74A22E14AAF64DB931E921483B5931E4D241EFE7"
     }
   ]
 }
