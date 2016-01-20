@@ -1,0 +1,44 @@
+<meta name="format-detection" content="telephone=no" />
+<ion-view view-title="个人中心" cache-view="false">
+    <ion-content>
+        <div class="list">
+            <div class="item item-divider">
+                账号设置
+            </div>
+            <a class="item item-icon-left">
+                <i class="icon ion-ios-telephone"></i>绑定手机号码：{{userphone==""?"未设置":userphone}} {{phonevalidated ? "(已验证)":"(未验证)"}}
+            </a>
+            <button class="button button-full button-stable" ng-click="bindphone()">
+                <i class="icon ion-ios-color-wand-outline"></i>&nbsp;修改绑定手机号码
+            </button>
+        </div>
+        <div class="list">
+            <div class="item item-divider">
+                推送提醒设置
+            </div>
+            <ion-toggle ng-model="apppush.checked" ng-change="pushNotificationChange(1)">
+                App接收宕机推送消息
+            </ion-toggle>
+            <ion-toggle ng-model="smspush.checked" ng-change="pushNotificationChange(2)">
+                短信接收宕机信息提醒
+            </ion-toggle>
+            <ion-toggle ng-model="phonepush.checked" ng-change="pushNotificationChange(3)">
+                电话接听宕机语音提醒
+            </ion-toggle>
+        </div>
+        <div class="list">
+            <div class="item item-divider">
+                帮助
+            </div>
+            <a class="item item-icon-left" onclick="window.open('http://gugujiankong.com?source=m', '_system', 'location=yes'); return false;">
+                <i class="icon ion-android-globe"></i>咕咕监控官网
+            </a>
+            <a class="item item-icon-left" onclick="window.open('http://gugujiankong.com?source=m', '_system', 'location=yes'); return false;">
+                <i class="icon ion-android-bookmark"></i>版本号：v0.2.0
+            </a>
+        </div>
+        <button class="button button-full button-energized" ng-click="gotoaccountlist()">
+            <i class="icon ion-arrow-left-c"></i>&nbsp;返回
+        </button>
+    </ion-content>
+</ion-view>

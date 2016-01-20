@@ -3,6 +3,7 @@ module.exports = [
     {
         "file": "plugins/cn.jpush.phonegap.JPushPlugin/www/JPushPlugin.js",
         "id": "cn.jpush.phonegap.JPushPlugin.JPushPlugin",
+        "pluginId": "cn.jpush.phonegap.JPushPlugin",
         "clobbers": [
             "window.plugins.jPushPlugin"
         ]
@@ -10,6 +11,7 @@ module.exports = [
     {
         "file": "plugins/com.ionic.keyboard/www/keyboard.js",
         "id": "com.ionic.keyboard.keyboard",
+        "pluginId": "com.ionic.keyboard",
         "clobbers": [
             "cordova.plugins.Keyboard"
         ]
@@ -17,6 +19,7 @@ module.exports = [
     {
         "file": "plugins/com.jcjee.plugins.emailcomposer/www/EmailComposer.js",
         "id": "com.jcjee.plugins.emailcomposer.EmailComposer",
+        "pluginId": "com.jcjee.plugins.emailcomposer",
         "clobbers": [
             "EmailComposer"
         ]
@@ -24,6 +27,7 @@ module.exports = [
     {
         "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
         "id": "cordova-plugin-console.console",
+        "pluginId": "cordova-plugin-console",
         "clobbers": [
             "console"
         ]
@@ -31,6 +35,7 @@ module.exports = [
     {
         "file": "plugins/cordova-plugin-console/www/logger.js",
         "id": "cordova-plugin-console.logger",
+        "pluginId": "cordova-plugin-console",
         "clobbers": [
             "cordova.logger"
         ]
@@ -38,6 +43,7 @@ module.exports = [
     {
         "file": "plugins/cordova-plugin-device/www/device.js",
         "id": "cordova-plugin-device.device",
+        "pluginId": "cordova-plugin-device",
         "clobbers": [
             "device"
         ]
@@ -45,6 +51,7 @@ module.exports = [
     {
         "file": "plugins/cordova-plugin-network-information/www/network.js",
         "id": "cordova-plugin-network-information.network",
+        "pluginId": "cordova-plugin-network-information",
         "clobbers": [
             "navigator.connection",
             "navigator.network.connection"
@@ -53,6 +60,7 @@ module.exports = [
     {
         "file": "plugins/cordova-plugin-network-information/www/Connection.js",
         "id": "cordova-plugin-network-information.Connection",
+        "pluginId": "cordova-plugin-network-information",
         "clobbers": [
             "Connection"
         ]
@@ -60,6 +68,7 @@ module.exports = [
     {
         "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
         "id": "cordova-plugin-splashscreen.SplashScreen",
+        "pluginId": "cordova-plugin-splashscreen",
         "clobbers": [
             "navigator.splashscreen"
         ]
@@ -67,6 +76,7 @@ module.exports = [
     {
         "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
         "id": "org.apache.cordova.inappbrowser.inappbrowser",
+        "pluginId": "org.apache.cordova.inappbrowser",
         "clobbers": [
             "window.open"
         ]

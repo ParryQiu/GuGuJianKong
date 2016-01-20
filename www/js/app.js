@@ -5,164 +5,168 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ui.router', 'starter.controllers', 'starter.services','ngCordova','chart.js'])
+angular.module('starter', ['ionic', 'ui.router', 'starter.controllers', 'starter.services', 'ngCordova', 'chart.js'])
 
-    .run(function ($ionicPlatform,$cordovaNetwork) {
-        $ionicPlatform.ready(function () {
+.run(function($ionicPlatform, $cordovaNetwork) {
+    $ionicPlatform.ready(function() {
 
-            //推送插件
-            window.plugins.jPushPlugin.init();
+        //推送插件
+        window.plugins.jPushPlugin.init();
 
-            // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-            // for form inputs)
-            if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-                cordova.plugins.Keyboard.disableScroll(true);
-                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+        // for form inputs)
+        if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.disableScroll(true);
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if (window.StatusBar) {
+            // org.apache.cordova.statusbar required
+            StatusBar.styleLightContent();
+        }
+
+        // System events
+        document.addEventListener("resume", resume, false);
+
+        function resume() {
+            if (window.plugins.jPushPlugin.isPlatformIOS()) {
+                window.plugins.jPushPlugin.setBadge(0);
+                window.plugins.jPushPlugin.setApplicationIconBadgeNumber(0);
+            } else if (window.plugins.jPushPlugin.isAndroid()) {
+                window.plugins.jPushPlugin.setLatestNotificationNum(3);
+                window.plugins.jPushPlugin.clearAllNotification();
             }
-            if (window.StatusBar) {
-                // org.apache.cordova.statusbar required
-                StatusBar.styleLightContent();
-            }
+        }
 
-            // System events
-            document.addEventListener("resume", resume, false);
+        //判断网络状态
+        document.addEventListener("deviceready", function() {
 
-            function resume() {
-                if(window.plugins.jPushPlugin.isPlatformIOS())
-                {
-                    window.plugins.jPushPlugin.setBadge(0);
-                    window.plugins.jPushPlugin.setApplicationIconBadgeNumber(0);
-                }
-                else if(window.plugins.jPushPlugin.isAndroid())
-                {
-                    window.plugins.jPushPlugin.setLatestNotificationNum(3);
-                    window.plugins.jPushPlugin.clearAllNotification();
-                }
-            }
+            //var type = $cordovaNetwork.getNetwork()
+            //
+            //var isOnline = $cordovaNetwork.isOnline()
+            //
+            //var isOffline = $cordovaNetwork.isOffline()
 
-            //判断网络状态
-            document.addEventListener("deviceready", function () {
+            // listen for Online event
+            $rootScope.$on('$cordovaNetwork:online', function(event, networkState) {
+                var onlineState = networkState;
+                console.log("device online...");
+            })
 
-                //var type = $cordovaNetwork.getNetwork()
-                //
-                //var isOnline = $cordovaNetwork.isOnline()
-                //
-                //var isOffline = $cordovaNetwork.isOffline()
+            // listen for Offline event
+            $rootScope.$on('$cordovaNetwork:offline', function(event, networkState) {
+                var offlineState = networkState;
+                //提醒用户的网络异常
+                $ionicLoading.show({
+                    template: '网络异常，不能连接到服务器！'
+                });
+            })
 
-                // listen for Online event
-                $rootScope.$on('$cordovaNetwork:online', function (event, networkState) {
-                    var onlineState = networkState;
-                    console.log("device online...");
-                })
+        }, false);
+    });
 
-                // listen for Offline event
-                $rootScope.$on('$cordovaNetwork:offline', function (event, networkState) {
-                    var offlineState = networkState;
-                    //提醒用户的网络异常
-                    $ionicLoading.show({
-                        template: '网络异常，不能连接到服务器！'
-                    });
-                })
+})
 
-            }, false);
-        });
+.config(function($stateProvider, $urlRouterProvider) {
 
+    // Ionic uses AngularUI Router which uses the concept of states
+    // Learn more here: https://github.com/angular-ui/ui-router
+    // Set up the various states which the app can be in.
+    // Each state's controller can be found in controllers.js
+    $stateProvider
+
+    // setup an abstract state for the tabs directive
+        .state('tab', {
+        url: "/tab",
+        abstract: true,
+        templateUrl: "templates/tabs.html"
     })
 
-    .config(function ($stateProvider, $urlRouterProvider) {
+    // Each tab has its own nav history stack:
 
-        // Ionic uses AngularUI Router which uses the concept of states
-        // Learn more here: https://github.com/angular-ui/ui-router
-        // Set up the various states which the app can be in.
-        // Each state's controller can be found in controllers.js
-        $stateProvider
+    .state('tab.websites', {
+        url: '/websites',
+        cache: false,
+        views: {
+            'tab-websites': {
+                templateUrl: 'templates/tab-websites.html',
+                controller: 'WebSitesCtrl'
+            }
+        }
+    })
 
-            // setup an abstract state for the tabs directive
-            .state('tab', {
-                url: "/tab",
-                abstract: true,
-                templateUrl: "templates/tabs.html"
-            })
+    .state('tab.testspeed', {
+        url: '/testspeed',
+        cache: false,
+        views: {
+            'tab-testspeed': {
+                templateUrl: 'templates/tab-testspeed.html',
+                controller: 'TestSpeedCtrl'
+            }
+        }
+    })
 
-            // Each tab has its own nav history stack:
+    .state('tab.searchengine', {
+        url: '/searchengine',
+        cache: false,
+        views: {
+            'tab-searchengine': {
+                templateUrl: 'templates/tab-searchengine.html',
+                controller: 'SearchEngineCtrl'
+            }
+        }
+    })
 
-            .state('tab.websites', {
-                url: '/websites',
-                cache: false,
-                views: {
-                    'tab-websites': {
-                        templateUrl: 'templates/tab-websites.html',
-                        controller: 'WebSitesCtrl'
-                    }
-                }
-            })
+    .state('setting', {
+        url: '/setting',
+        cache: false,
+        templateUrl: 'templates/setting.html',
+        controller: 'SettingCtrl'
+    })
 
-            .state('tab.testspeed', {
-                url: '/testspeed',
-                cache: false,
-                views: {
-                    'tab-testspeed': {
-                        templateUrl: 'templates/tab-testspeed.html',
-                        controller: 'TestSpeedCtrl'
-                    }
-                }
-            })
+    .state('tab.account', {
+        url: '/account',
+        cache: false,
+        views: {
+            'tab-account': {
+                templateUrl: 'templates/tab-account.html',
+                controller: 'AccountCtrl'
+            }
+        }
+    })
 
-            .state('tab.searchengine', {
-                url: '/searchengine',
-                cache: false,
-                views: {
-                    'tab-searchengine': {
-                        templateUrl: 'templates/tab-searchengine.html',
-                        controller: 'SearchEngineCtrl'
-                    }
-                }
-            })
+    .state('tab.accountlistitem', {
+        url: '/accountlistitem',
+        cache: false,
+        views: {
+            'tab-account': {
+                templateUrl: 'templates/tab-accountlistitem.html',
+                controller: 'AccountListItemCtrl'
+            }
+        }
+    })
 
-            .state('tab.account', {
-                url: '/account',
-                cache: false,
-                views: {
-                    'tab-account': {
-                        templateUrl: 'templates/tab-account.html',
-                        controller: 'AccountCtrl'
-                    }
-                }
-            })
+    .state('register', {
+        url: '/register',
+        cache: false,
+        templateUrl: 'templates/register.html',
+        controller: 'RegisterCtrl'
+    })
 
-            .state('tab.accountlistitem', {
-                url: '/accountlistitem',
-                cache: false,
-                views: {
-                    'tab-account': {
-                        templateUrl: 'templates/tab-accountlistitem.html',
-                        controller: 'AccountListItemCtrl'
-                    }
-                }
-            })
+    .state('about', {
+        url: '/tab/account/about',
+        cache: false,
+        templateUrl: 'templates/about.html',
+        controller: 'AboutCtrl'
+    })
 
-            .state('register', {
-                url: '/register',
-                cache: false,
-                templateUrl: 'templates/register.html',
-                controller: 'RegisterCtrl'
-            })
-
-            .state('about', {
-                url: '/tab/account/about',
-                cache: false,
-                templateUrl: 'templates/about.html',
-                controller: 'AboutCtrl'
-            })
-
-            .state('resetpassword', {
-                url: '/tab/account/resetpassword',
-                cache: false,
-                templateUrl: 'templates/resetpassword.html',
-                controller: 'ResetPasswordCtrl'
-            });
-
-        // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/tab/account');
-
+    .state('resetpassword', {
+        url: '/tab/account/resetpassword',
+        cache: false,
+        templateUrl: 'templates/resetpassword.html',
+        controller: 'ResetPasswordCtrl'
     });
+
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/tab/account');
+
+});

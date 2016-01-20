@@ -9,32 +9,71 @@
 .margintop {
     margin-top: 5px;
 }
-.smallicon
-{
-    width:20px;
+
+.smallicon {
+    width: 20px;
     height: 20px;
     vertical-align: bottom;
     margin-right: 3px;
 }
 
-.moresmallicon
-{
-    width:16px;
+.moresmallicon {
+    width: 16px;
     height: 16px;
     vertical-align: bottom;
     margin-right: 3px;
     vertical-align: text-bottom;
 }
-.searchengineitem
-{
+
+.searchengineitem {
     padding-top: 2px;
     padding-bottom: 2px;
 }
+
 .scroll-refresher {
     width: 100%;
 }
 
-.bar .back-button.hide, .bar .buttons .hide
-{
+.bar .back-button.hide,
+.bar .buttons .hide {
     display: inline !important;
+}
+
+.redbutton {
+    background: #e42112;
+    color: #FFFFFF !important;
+    text-align: center;
+    font-size: 16px;
+}
+
+img {
+    width: 16px;
+}
+
+.sentcodebutton {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    min-height: 28px;
+    padding: 0px;
+    line-height: 32px;
+}
+
+.inputpaddingleft {
+    padding-left: 5px !important;
+}
+
+.left {
+    float: left;
+    margin: 0 !important;
+    margin-bottom: 5px !important;
+}
+
+.width60 {
+    width: 60% !important;
+}
+
+.width40 {
+    width: 40% !important;
 }

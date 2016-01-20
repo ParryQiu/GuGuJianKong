@@ -54,16 +54,13 @@
             }
             var onReceiveNotification = function(event){
                 try{
-                    
-                    var eventContent="{";
-                    for(var key in event){
-                        if(key=="type"){
-                            break
-                        }
-                       eventContent+=key+":"+JSON.stringify(event[key])+"\n"
+                	var alertContent
+                    if(device.platform == "Android"){
+                  		 alertContent = window.plugins.jPushPlugin.receiveNotification.alert;
+                    }else{
+                         alertContent   = event.aps.alert;
                     }
-                    eventContent+="}";
-                    $("#notificationResult").html(eventContent);
+                    $("#notificationResult").html(alertContent);
                     
                 }
                 catch(exeption){
@@ -72,9 +69,15 @@
             }
             var onReceiveMessage = function(event){
                 try{
-                     var message = window.plugins.jPushPlugin.receiveMessage.message;
+                
+                    var message
+                    if(device.platform == "Android"){
+                  		 message = window.plugins.jPushPlugin.receiveMessage.message;
+                    }else{
+                         message   = event.content;
+                    }                    
                      //var extras = window.plugins.jPushPlugin.extras
-        
+    
                      $("#messageResult").html(message);
                      
                 }
@@ -89,7 +92,7 @@
                     window.plugins.jPushPlugin.init();
                     window.plugins.jPushPlugin.getRegistrationID(onGetRegistradionID);
                     
-                    if(device.platform == "Android"){
+                    if(device.platform != "Android"){
                         window.plugins.jPushPlugin.setDebugModeFromIos();
                         window.plugins.jPushPlugin.setApplicationIconBadgeNumber(0);
                     }else{

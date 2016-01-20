@@ -247,6 +247,7 @@ dependencies {
     debugCompile project(path: ":CordovaLib", configuration: "debug")
     releaseCompile project(path: ":CordovaLib", configuration: "release")
     // SUB-PROJECT DEPENDENCIES END
+    compile files('libs/jpush-android-2.0.5.jar')
 }
 
 def promptForReleaseKeyPassword() {
