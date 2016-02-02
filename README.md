@@ -12,6 +12,8 @@ GuGuJianKong App for website online monitor, implemented using [Ionic Framework]
 ## Official Website / 官网 
 [http://gugujiankong.com](http://gugujiankong.com "Official Website / 官网")
 
+**另一站点备案中，暂时关闭，稍后恢复！**
+
 ## App Screenshot /  App截图
 ###### iPhone platform screenshot / iPhone 平台截图
 ![iphone screenshot / iPhone 截图](https://github.com/ParryQiu/GuGuJianKong/blob/master/screenshot/screenshot_iphone.png?raw=true "iphone screenshot / iPhone 截图")
@@ -47,3 +49,4 @@ GuGuJianKong App for website online monitor, implemented using [Ionic Framework]
 Available under the GPL v3 license. See the [LICENSE file](http://choosealicense.com/licenses/gpl-3.0/ "LICENSE file") for more informatiion.
 
 项目开源许可证使用 GPL v3，协议详情请查看 [LICENSE 文件](http://choosealicense.com/licenses/gpl-3.0/ "LICENSE 文件")。
+
