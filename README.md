@@ -12,7 +12,7 @@ GuGuJianKong App for website online monitor, implemented using [Ionic Framework]
 ## Official Website / 官网 
 [http://gugujiankong.com](http://gugujiankong.com "Official Website / 官网")
 
-**另一站点备案中，暂时关闭，稍后恢复！**
+**另一站点备案中，访问可能暂时性地不稳定！**
 
 ## App Screenshot /  App截图
 ###### iPhone platform screenshot / iPhone 平台截图
