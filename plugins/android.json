@@ -45,12 +45,6 @@
             },
             "AndroidManifest.xml": {
                 "parents": {
-                    "application": [
-                        {
-                            "xml": "<provider android:authorities=\"com.gugujiankong.app.plugins.emailcomposer.provider\" android:name=\"com.jcjee.plugins.EmailAttachmentProvider\" />",
-                            "count": 1
-                        }
-                    ],
                     "/manifest": [
                         {
                             "xml": "<uses-permission android:name=\"com.gugujiankong.app.permission.JPUSH_MESSAGE\" />",

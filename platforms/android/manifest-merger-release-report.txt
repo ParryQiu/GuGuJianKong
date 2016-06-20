@@ -70,169 +70,193 @@ category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:9:17
 	android:name
 		ADDED from AndroidManifest.xml:9:27
-provider#com.jcjee.plugins.EmailAttachmentProvider
-ADDED from AndroidManifest.xml:12:9
-	android:authorities
-		ADDED from AndroidManifest.xml:12:19
-	android:name
-		ADDED from AndroidManifest.xml:12:96
 activity#cn.jpush.android.ui.PushActivity
-ADDED from AndroidManifest.xml:16:9
+ADDED from AndroidManifest.xml:12:9
 	android:configChanges
-		ADDED from AndroidManifest.xml:18:13
+		ADDED from AndroidManifest.xml:12:19
 	android:theme
-		ADDED from AndroidManifest.xml:19:13
+		ADDED from AndroidManifest.xml:12:143
 	android:exported
-		ADDED from AndroidManifest.xml:20:13
+		ADDED from AndroidManifest.xml:12:70
 	android:name
-		ADDED from AndroidManifest.xml:17:13
+		ADDED from AndroidManifest.xml:12:95
 intent-filter#android.intent.category.DEFAULT+cn.jpush.android.ui.PushActivity+com.gugujiankong.iosapp
-ADDED from AndroidManifest.xml:21:13
+ADDED from AndroidManifest.xml:13:13
 action#cn.jpush.android.ui.PushActivity
-ADDED from AndroidManifest.xml:22:17
+ADDED from AndroidManifest.xml:14:17
 	android:name
-		ADDED from AndroidManifest.xml:22:25
+		ADDED from AndroidManifest.xml:14:25
 category#android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:15:17
+	android:name
+		ADDED from AndroidManifest.xml:15:27
+category#com.gugujiankong.iosapp
+ADDED from AndroidManifest.xml:16:17
+	android:name
+		ADDED from AndroidManifest.xml:16:27
+service#cn.jpush.android.service.DownloadService
+ADDED from AndroidManifest.xml:19:9
+	android:exported
+		ADDED from AndroidManifest.xml:19:41
+	android:enabled
+		ADDED from AndroidManifest.xml:19:18
+	android:name
+		ADDED from AndroidManifest.xml:19:66
+service#cn.jpush.android.service.PushService
+ADDED from AndroidManifest.xml:21:9
+	android:exported
+		ADDED from AndroidManifest.xml:21:41
+	android:enabled
+		ADDED from AndroidManifest.xml:21:18
+	android:name
+		ADDED from AndroidManifest.xml:21:66
+intent-filter#cn.jpush.android.intent.PUSH_TIME+cn.jpush.android.intent.PushService+cn.jpush.android.intent.REGISTER+cn.jpush.android.intent.REPORT
+ADDED from AndroidManifest.xml:22:13
+action#cn.jpush.android.intent.REGISTER
 ADDED from AndroidManifest.xml:23:17
 	android:name
-		ADDED from AndroidManifest.xml:23:27
-category#com.gugujiankong.iosapp
+		ADDED from AndroidManifest.xml:23:25
+action#cn.jpush.android.intent.REPORT
 ADDED from AndroidManifest.xml:24:17
 	android:name
-		ADDED from AndroidManifest.xml:24:27
-service#cn.jpush.android.service.DownloadService
-ADDED from AndroidManifest.xml:28:9
-	android:exported
-		ADDED from AndroidManifest.xml:31:13
-	android:enabled
-		ADDED from AndroidManifest.xml:30:13
-	android:name
-		ADDED from AndroidManifest.xml:29:13
-service#cn.jpush.android.service.PushService
-ADDED from AndroidManifest.xml:37:9
-	android:exported
-		ADDED from AndroidManifest.xml:40:13
-	android:enabled
-		ADDED from AndroidManifest.xml:39:13
-	android:name
-		ADDED from AndroidManifest.xml:38:13
-intent-filter#cn.jpush.android.intent.PUSH_TIME+cn.jpush.android.intent.PushService+cn.jpush.android.intent.REGISTER+cn.jpush.android.intent.REPORT
-ADDED from AndroidManifest.xml:41:13
-action#cn.jpush.android.intent.REGISTER
-ADDED from AndroidManifest.xml:42:17
-	android:name
-		ADDED from AndroidManifest.xml:42:25
-action#cn.jpush.android.intent.REPORT
-ADDED from AndroidManifest.xml:43:17
-	android:name
-		ADDED from AndroidManifest.xml:43:25
+		ADDED from AndroidManifest.xml:24:25
 action#cn.jpush.android.intent.PushService
-ADDED from AndroidManifest.xml:44:17
+ADDED from AndroidManifest.xml:25:17
 	android:name
-		ADDED from AndroidManifest.xml:44:25
+		ADDED from AndroidManifest.xml:25:25
 action#cn.jpush.android.intent.PUSH_TIME
+ADDED from AndroidManifest.xml:26:17
+	android:name
+		ADDED from AndroidManifest.xml:26:25
+receiver#cn.jpush.android.service.PushReceiver
+ADDED from AndroidManifest.xml:29:9
+	android:enabled
+		ADDED from AndroidManifest.xml:29:19
+	android:name
+		ADDED from AndroidManifest.xml:29:42
+intent-filter#cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY+com.gugujiankong.iosapp
+ADDED from AndroidManifest.xml:30:13
+	android:priority
+		ADDED from AndroidManifest.xml:30:28
+action#cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY
+ADDED from AndroidManifest.xml:31:17
+	android:name
+		ADDED from AndroidManifest.xml:31:25
+intent-filter#android.intent.action.USER_PRESENT+android.net.conn.CONNECTIVITY_CHANGE
+ADDED from AndroidManifest.xml:34:13
+action#android.intent.action.USER_PRESENT
+ADDED from AndroidManifest.xml:35:17
+	android:name
+		ADDED from AndroidManifest.xml:35:25
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from AndroidManifest.xml:36:17
+	android:name
+		ADDED from AndroidManifest.xml:36:25
+receiver#cn.jpush.phonegap.MyReceiver
+ADDED from AndroidManifest.xml:39:9
+	android:enabled
+		ADDED from AndroidManifest.xml:39:19
+	android:name
+		ADDED from AndroidManifest.xml:39:42
+intent-filter#cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK+cn.jpush.android.intent.MESSAGE_RECEIVED+cn.jpush.android.intent.NOTIFICATION_OPENED+cn.jpush.android.intent.NOTIFICATION_RECEIVED+cn.jpush.android.intent.REGISTRATION+cn.jpush.android.intent.UNREGISTRATION+com.gugujiankong.iosapp
+ADDED from AndroidManifest.xml:44:13
+action#cn.jpush.android.intent.REGISTRATION
 ADDED from AndroidManifest.xml:45:17
 	android:name
 		ADDED from AndroidManifest.xml:45:25
-receiver#cn.jpush.android.service.PushReceiver
-ADDED from AndroidManifest.xml:51:9
-	android:exported
-		ADDED from AndroidManifest.xml:54:13
-	android:enabled
-		ADDED from AndroidManifest.xml:53:13
+action#cn.jpush.android.intent.UNREGISTRATION
+ADDED from AndroidManifest.xml:46:17
 	android:name
-		ADDED from AndroidManifest.xml:52:13
-intent-filter#cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY+com.gugujiankong.iosapp
-ADDED from AndroidManifest.xml:55:13
-	android:priority
-		ADDED from AndroidManifest.xml:55:28
-action#cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY
-ADDED from AndroidManifest.xml:56:17
+		ADDED from AndroidManifest.xml:46:25
+action#cn.jpush.android.intent.MESSAGE_RECEIVED
+ADDED from AndroidManifest.xml:47:17
 	android:name
-		ADDED from AndroidManifest.xml:56:25
-intent-filter#android.intent.action.USER_PRESENT+android.net.conn.CONNECTIVITY_CHANGE
-ADDED from AndroidManifest.xml:59:13
-action#android.intent.action.USER_PRESENT
-ADDED from AndroidManifest.xml:60:17
+		ADDED from AndroidManifest.xml:47:25
+action#cn.jpush.android.intent.NOTIFICATION_RECEIVED
+ADDED from AndroidManifest.xml:48:17
 	android:name
-		ADDED from AndroidManifest.xml:60:25
-action#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from AndroidManifest.xml:61:17
+		ADDED from AndroidManifest.xml:48:25
+action#cn.jpush.android.intent.NOTIFICATION_OPENED
+ADDED from AndroidManifest.xml:49:17
 	android:name
-		ADDED from AndroidManifest.xml:61:25
+		ADDED from AndroidManifest.xml:49:25
+action#cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK
+ADDED from AndroidManifest.xml:50:17
+	android:name
+		ADDED from AndroidManifest.xml:50:25
 receiver#cn.jpush.android.service.AlarmReceiver
-ADDED from AndroidManifest.xml:67:9
+ADDED from AndroidManifest.xml:54:9
 	android:exported
-		ADDED from AndroidManifest.xml:67:73
+		ADDED from AndroidManifest.xml:54:19
 	android:name
-		ADDED from AndroidManifest.xml:67:19
+		ADDED from AndroidManifest.xml:54:44
 meta-data#JPUSH_CHANNEL
-ADDED from AndroidManifest.xml:70:9
+ADDED from AndroidManifest.xml:55:9
 	android:name
-		ADDED from AndroidManifest.xml:70:20
+		ADDED from AndroidManifest.xml:55:20
 	android:value
-		ADDED from AndroidManifest.xml:70:49
+		ADDED from AndroidManifest.xml:55:49
 meta-data#JPUSH_APPKEY
-ADDED from AndroidManifest.xml:71:9
+ADDED from AndroidManifest.xml:56:9
 	android:name
-		ADDED from AndroidManifest.xml:71:20
+		ADDED from AndroidManifest.xml:56:20
 	android:value
-		ADDED from AndroidManifest.xml:71:48
+		ADDED from AndroidManifest.xml:56:48
 permission#com.gugujiankong.iosapp.permission.JPUSH_MESSAGE
-ADDED from AndroidManifest.xml:80:5
+ADDED from AndroidManifest.xml:58:5
 	android:protectionLevel
-		ADDED from AndroidManifest.xml:80:81
+		ADDED from AndroidManifest.xml:58:81
 	android:name
-		ADDED from AndroidManifest.xml:80:17
+		ADDED from AndroidManifest.xml:58:17
 uses-permission#com.gugujiankong.iosapp.permission.JPUSH_MESSAGE
-ADDED from AndroidManifest.xml:81:5
+ADDED from AndroidManifest.xml:59:5
 	android:name
-		ADDED from AndroidManifest.xml:81:22
+		ADDED from AndroidManifest.xml:59:22
 uses-permission#android.permission.RECEIVE_USER_PRESENT
-ADDED from AndroidManifest.xml:82:5
+ADDED from AndroidManifest.xml:60:5
 	android:name
-		ADDED from AndroidManifest.xml:82:22
+		ADDED from AndroidManifest.xml:60:22
 uses-permission#android.permission.INTERNET
-ADDED from AndroidManifest.xml:83:5
+ADDED from AndroidManifest.xml:61:5
 	android:name
-		ADDED from AndroidManifest.xml:83:22
+		ADDED from AndroidManifest.xml:61:22
 uses-permission#android.permission.WAKE_LOCK
-ADDED from AndroidManifest.xml:84:5
+ADDED from AndroidManifest.xml:62:5
 	android:name
-		ADDED from AndroidManifest.xml:84:22
+		ADDED from AndroidManifest.xml:62:22
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from AndroidManifest.xml:85:5
+ADDED from AndroidManifest.xml:63:5
 	android:name
-		ADDED from AndroidManifest.xml:85:22
+		ADDED from AndroidManifest.xml:63:22
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from AndroidManifest.xml:86:5
+ADDED from AndroidManifest.xml:64:5
 	android:name
-		ADDED from AndroidManifest.xml:86:22
+		ADDED from AndroidManifest.xml:64:22
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from AndroidManifest.xml:87:5
+ADDED from AndroidManifest.xml:65:5
 	android:name
-		ADDED from AndroidManifest.xml:87:22
+		ADDED from AndroidManifest.xml:65:22
 uses-permission#android.permission.VIBRATE
-ADDED from AndroidManifest.xml:88:5
+ADDED from AndroidManifest.xml:66:5
 	android:name
-		ADDED from AndroidManifest.xml:88:22
+		ADDED from AndroidManifest.xml:66:22
 uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
-ADDED from AndroidManifest.xml:89:5
+ADDED from AndroidManifest.xml:67:5
 	android:name
-		ADDED from AndroidManifest.xml:89:22
+		ADDED from AndroidManifest.xml:67:22
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from AndroidManifest.xml:90:5
+ADDED from AndroidManifest.xml:68:5
 	android:name
-		ADDED from AndroidManifest.xml:90:22
+		ADDED from AndroidManifest.xml:68:22
 uses-permission#android.permission.WRITE_SETTINGS
-ADDED from AndroidManifest.xml:91:5
+ADDED from AndroidManifest.xml:69:5
 	android:name
-		ADDED from AndroidManifest.xml:91:22
+		ADDED from AndroidManifest.xml:69:22
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from AndroidManifest.xml:92:5
+ADDED from AndroidManifest.xml:70:5
 	android:name
-		ADDED from AndroidManifest.xml:92:22
+		ADDED from AndroidManifest.xml:70:22
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from AndroidManifest.xml:93:5
+ADDED from AndroidManifest.xml:71:5
 	android:name
-		ADDED from AndroidManifest.xml:93:22
+		ADDED from AndroidManifest.xml:71:22

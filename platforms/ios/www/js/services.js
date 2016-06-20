@@ -1,6 +1,6 @@
-angular.module('starter.services', [])
+angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
 
-.factory('Websites', function($q, $http) {
+.factory('Websites', function($q, $http, $ImageCacheFactory) {
     return {
         all: function($scope) {
             var d = $q.defer();
@@ -9,6 +9,17 @@ angular.module('starter.services', [])
             $http.jsonp("http://api.gugujiankong.com/website/GetMyWebsites?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
                 .success(function(data) {
                     $scope.sites = data;
+
+                    // 缓存图片开始
+                    var images = [];
+                    for (var i = 0; i < data.length; i++) {
+                        images.push(data[i].SiteIcon);
+                    }
+                    $ImageCacheFactory.Cache(images).then(function() {
+                        console.log("Images done loading!");
+                    });;
+                    // 缓存图片结束
+
                     d.resolve(data);
                 })
                 .error(function(error) {

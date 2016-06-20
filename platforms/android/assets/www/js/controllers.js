@@ -52,7 +52,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('RegisterCtrl', function($scope, $state, $ionicPopup, LoginService) {
+.controller('RegisterCtrl', function($scope, $state, $ionicPopup, LoginService, $ionicLoading) {
 
     $scope.data = {};
 
@@ -76,6 +76,11 @@ angular.module('starter.controllers', [])
                     title: '用户名不合法',
                     template: '请确认用户名不能为空！'
                 });
+            } else if (password == undefined || passwordconfirm == undefined) {
+                var alertPopup = $ionicPopup.alert({
+                    title: '密码长度不合格',
+                    template: '请确认密码长度不低于六位！'
+                });
             } else if (password.length < 6) {
                 var alertPopup = $ionicPopup.alert({
                     title: '密码长度不合格',
@@ -88,18 +93,32 @@ angular.module('starter.controllers', [])
                         template: '请确认两次输入的密码一致！'
                     });
                 } else {
+                    $ionicLoading.show({
+                        template: '注册中...'
+                    });
                     //提交api，进行注册功能
                     LoginService.register(email, $scope.data.username, $scope.data.password).success(function(data) {
+                        console.log(data);
                         //注册成功，提示一下用户
+
+                        $ionicLoading.hide();
+
                         var alertPopup = $ionicPopup.alert({
                             title: '注册成功',
-                            template: '恭喜您注册成功，快快登录体验咕咕监控吧！'
+                            template: '恭喜您注册成功，快快登录使用吧！'
                         });
                         alertPopup.then(function(res) {
                             //用户点击确认登录后跳转
                             $state.go("tab.account");
-                        });
+                        })
+                    }).error(function(data) {
+                        $ionicLoading.hide();
+                        var alertPopup = $ionicPopup.alert({
+                            title: '注册失败',
+                            template: '输入的邮箱已注册过，请修改后注册！'
+                        })
                     });
+
                 }
             }
         } else {
@@ -111,7 +130,8 @@ angular.module('starter.controllers', [])
     };
 
     var checkMail = function(szMail) {
-        var szReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+        //var szReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+        var szReg = /^[A-Za-z0-9]+([-_.][A-Za-z0-9]+)*@([A-Za-z0-9]+[-.])+[A-Za-z0-9]{2,4}$/;;
         var bChk = szReg.test(szMail);
         return bChk;
     }
@@ -159,7 +179,7 @@ angular.module('starter.controllers', [])
     };
 
     var checkMail = function(szMail) {
-        var szReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+        var szReg = /^[A-Za-z0-9]+([-_.][A-Za-z0-9]+)*@([A-Za-z0-9]+[-.])+[A-Za-z0-9]{2,4}$/;;
         var bChk = szReg.test(szMail);
         return bChk;
     }
@@ -224,6 +244,11 @@ angular.module('starter.controllers', [])
     }
 
     $scope.login = function() {
+
+        $ionicLoading.show({
+            template: '登录中...'
+        });
+
         LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
             //登录成功
             localStorage.haslogin = 1;
@@ -231,6 +256,7 @@ angular.module('starter.controllers', [])
             $state.go("tab.accountlistitem");
 
         }).error(function(data) {
+            $ionicLoading.hide();
             localStorage.haslogin = 0
             var alertPopup = $ionicPopup.alert({
                 title: '登录失败',
