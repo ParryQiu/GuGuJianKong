@@ -353,7 +353,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
                 .error(function(error) {
                     var confirmPopup = $ionicPopup.alert({
                         title: '推送设置',
-                        template: '手机号码绑定失败，请重试！'
+                        template: '设置推送失败，请重试！'
                     });
                     d.reject(error);
                 });
