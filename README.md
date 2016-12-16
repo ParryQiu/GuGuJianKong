@@ -9,8 +9,8 @@ GuGuJianKong App for website online monitor, implemented using [Ionic Framework]
 * website SEO. / 每日更新网站搜索引擎的收录情况，方便您直观、统一地对 SEO 做出合理的决策。
 * support iPhone, iPad, Android platfrom. / 支持 iPhone、iPad、Android 平台。
 
-## Official Website / 官网 
-[http://gugujiankong.com](http://gugujiankong.com "Official Website / 官网")
+## Official Website / 官网
+[https://gugujiankong.com](https://gugujiankong.com "Official Website / 官网")
 
 ## App Screenshot /  App截图
 ###### iPhone platform screenshot / iPhone 平台截图
@@ -52,4 +52,3 @@ GuGuJianKong App for website online monitor, implemented using [Ionic Framework]
 Available under the GPL v3 license. See the [LICENSE file](http://choosealicense.com/licenses/gpl-3.0/ "LICENSE file") for more informatiion.
 
 项目开源许可证使用 GPL v3，协议详情请查看 [LICENSE 文件](http://choosealicense.com/licenses/gpl-3.0/ "LICENSE 文件")。
-

@@ -387,7 +387,7 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = M83N3W9JC3;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -524,8 +524,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = M83N3W9JC3;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -561,8 +561,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gugujiankong.iosapp;
 				PRODUCT_NAME = GuGuJianKong;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "0ad4205a-8472-4cdb-9d33-cb2934309f22";
+				PROVISIONING_PROFILE_SPECIFIER = "gugujiankong-0920";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -573,7 +573,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = M83N3W9JC3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -607,8 +607,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gugujiankong.iosapp;
 				PRODUCT_NAME = GuGuJianKong;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "0ad4205a-8472-4cdb-9d33-cb2934309f22";
+				PROVISIONING_PROFILE_SPECIFIER = "gugujiankong-0920";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

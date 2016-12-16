@@ -6,7 +6,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
             var d = $q.defer();
             var promise = d.promise;
 
-            $http.jsonp("http://api.gugujiankong.com/website/GetMyWebsites?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
+            $http.jsonp("https://api.gugujiankong.com/website/GetMyWebsites?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
                 .success(function(data) {
                     $scope.sites = data;
 
@@ -40,7 +40,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
             var d = $q.defer();
             var promise = d.promise;
 
-            $http.jsonp("http://api.gugujiankong.com/website/GetAllSitesTestSpeed?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
+            $http.jsonp("https://api.gugujiankong.com/website/GetAllSitesTestSpeed?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
                 .success(function(data) {
                     $scope.testspeeddata = data;
                     d.resolve(data);
@@ -63,7 +63,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
             var d = $q.defer();
             var promise = d.promise;
 
-            $http.jsonp("http://api.gugujiankong.com/website/GetAllSitesSearchEngine?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
+            $http.jsonp("https://api.gugujiankong.com/website/GetAllSitesSearchEngine?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
                 .success(function(data) {
                     $scope.websitesearchengine = data;
                     d.resolve(data);
@@ -87,7 +87,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
             var d = $q.defer();
             var promise = d.promise;
 
-            $http.jsonp("http://api.gugujiankong.com/website/AddWebsite?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&url=" + $scope.data.siteurl + "&name=" + $scope.data.sitename + "&callback=JSON_CALLBACK")
+            $http.jsonp("https://api.gugujiankong.com/website/AddWebsite?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&url=" + $scope.data.siteurl + "&name=" + $scope.data.sitename + "&callback=JSON_CALLBACK")
                 .success(function(data) {
                     d.resolve(data);
                 })
@@ -111,7 +111,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
             var deferred = $q.defer();
             var promise = deferred.promise;
             //ajax请求
-            $http.jsonp("http://api.gugujiankong.com/website/DeleteWebsite?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&siteId=" + site.SiteId + "&callback=JSON_CALLBACK")
+            $http.jsonp("https://api.gugujiankong.com/website/DeleteWebsite?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&siteId=" + site.SiteId + "&callback=JSON_CALLBACK")
                 .success(function(response) {
                     //UI删除
                     allsites.splice(allsites.indexOf(site), 1);
@@ -138,7 +138,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
 
             var loginResult = new Object();
             //ajax请求
-            $http.jsonp("http://api.gugujiankong.com/account/Login?email=" + name + "&password=" + pw + "&callback=JSON_CALLBACK")
+            $http.jsonp("https://api.gugujiankong.com/account/Login?email=" + name + "&password=" + pw + "&callback=JSON_CALLBACK")
                 .success(function(response) {
                     loginResult = response;
                     if (loginResult.LoginStatus == 1) {
@@ -158,7 +158,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
                         //    try {
                         //        console.log("JPushPlugin:registrationID is " + data);
                         //        //ajax上传
-                        //        $http.jsonp("http://api.gugujiankong.com/account/Uploadregistrationid?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&registrationid=" + data + "&callback=JSON_CALLBACK")
+                        //        $http.jsonp("https://api.gugujiankong.com/account/Uploadregistrationid?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&registrationid=" + data + "&callback=JSON_CALLBACK")
                         //            .success(function (response) {
                         //            });
                         //    }
@@ -189,7 +189,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
             var deferred = $q.defer();
             var promise = deferred.promise;
             //ajax请求
-            $http.jsonp("http://api.gugujiankong.com/account/Register?email=" + email + "&username=" + name + "&password=" + password + "&callback=JSON_CALLBACK")
+            $http.jsonp("https://api.gugujiankong.com/account/Register?email=" + email + "&username=" + name + "&password=" + password + "&callback=JSON_CALLBACK")
                 .success(function(response) {
                     if (response == 1) {
                         deferred.resolve('register successfully');
@@ -211,7 +211,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
             var deferred = $q.defer();
             var promise = deferred.promise;
             //ajax请求
-            $http.jsonp("http://api.gugujiankong.com/account/resetpassword?email=" + email + "&callback=JSON_CALLBACK")
+            $http.jsonp("https://api.gugujiankong.com/account/resetpassword?email=" + email + "&callback=JSON_CALLBACK")
                 .success(function(response) {
                     if (response == 1) {
                         deferred.resolve('reset password successfully');
@@ -233,7 +233,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
             var d = $q.defer();
             var promise = d.promise;
             //ajax请求
-            $http.jsonp("http://api.gugujiankong.com/account/GetUserSetting?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
+            $http.jsonp("https://api.gugujiankong.com/account/GetUserSetting?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
                 .success(function(data) {
                     $scope.apppush.checked = data.AppPush;
                     $scope.smspush.checked = data.SmsPush;
@@ -263,7 +263,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
             var d = $q.defer();
             var promise = d.promise;
             //ajax请求
-            $http.jsonp("http://api.gugujiankong.com/account/SendPhoneValidateCode?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&phone=" + $scope.data.userphone + "&callback=JSON_CALLBACK")
+            $http.jsonp("https://api.gugujiankong.com/account/SendPhoneValidateCode?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&phone=" + $scope.data.userphone + "&callback=JSON_CALLBACK")
                 .success(function(data) {
                     if (data.SetPushStatus != 1) {
                         var confirmPopup = $ionicPopup.alert({
@@ -297,7 +297,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
             var d = $q.defer();
             var promise = d.promise;
             //ajax请求
-            $http.jsonp("http://api.gugujiankong.com/account/FinalBind?userId=" + localStorage.userid + "&phone=" + $scope.data.userphone + "&code=" + $scope.data.code + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
+            $http.jsonp("https://api.gugujiankong.com/account/FinalBind?userId=" + localStorage.userid + "&phone=" + $scope.data.userphone + "&code=" + $scope.data.code + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
                 .success(function(data) {
                     if (data.SetPushStatus != 1) {
                         var confirmPopup = $ionicPopup.alert({
@@ -340,7 +340,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
                 value = $scope.phonepush.checked;
             }
             //ajax请求
-            $http.jsonp("http://api.gugujiankong.com/account/SetPush?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&type=" + type + "&value=" + value + "&callback=JSON_CALLBACK")
+            $http.jsonp("https://api.gugujiankong.com/account/SetPush?userId=" + localStorage.userid + "&signToken=" + localStorage.signtoken + "&type=" + type + "&value=" + value + "&callback=JSON_CALLBACK")
                 .success(function(data) {
                     if (data.SetPushStatus != 1) {
                         var confirmPopup = $ionicPopup.alert({

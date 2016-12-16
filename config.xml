@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.gugujiankong.iosapp" version="0.2.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.gugujiankong.iosapp" version="0.2.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>GuGuJianKong</name>
   <description>
         专注于网站、服务器监控
     </description>
-  <author email="qiupengyuan@gmail.com" href="http://gugujiankong.com/">
+  <author email="qiupengyuan@gmail.com" href="https://gugujiankong.com/">
       Parry
     </author>
   <content src="index.html"/>
