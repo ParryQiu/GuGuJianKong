@@ -20,6 +20,10 @@ GuGuJianKong App for website online monitor, implemented using [Ionic Framework]
 
 ## Update / 版本更新
 
+###### v0.2.2 2016-12-14
+* 1. 为了符合 iOS ATS 安全策略，对相关接口做了相应的调整；
+* 2. 针对性能做了些许优化。
+
 ###### v0.2.1 2016-06-20
 * 1. 修复了用户注册时一些特殊邮箱格式的判断；
 * 2. 在用户注册和登录 UI 中增加了进度反馈；
