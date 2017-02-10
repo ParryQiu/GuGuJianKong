@@ -391,7 +391,7 @@ angular.module('starter.controllers', [])
                         $ionicLoading.hide();
                     });
                     myPopup.close();
-                    $state.go("setting");
+                    $state.reload();
                 }
             }]
         });

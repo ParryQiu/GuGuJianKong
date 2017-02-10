@@ -299,7 +299,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
             //ajax请求
             $http.jsonp("https://api.gugujiankong.com/account/FinalBind?userId=" + localStorage.userid + "&phone=" + $scope.data.userphone + "&code=" + $scope.data.code + "&signToken=" + localStorage.signtoken + "&callback=JSON_CALLBACK")
                 .success(function(data) {
-                    if (data.SetPushStatus != 1) {
+                    if (data.SetPushStatus == 1) {
                         var confirmPopup = $ionicPopup.alert({
                             title: '推送设置',
                             template: data.SetPushStatusComment
