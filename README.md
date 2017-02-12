@@ -20,6 +20,12 @@ GuGuJianKong App for website online monitor, implemented using [Ionic Framework]
 
 ## Update / 版本更新
 
+###### v0.2.4 2017-02-10
+* 1. 修复了用户绑定宕机提醒手机时可能出现的异常。
+
+###### v0.2.3 2017-01-06
+* 1. 优化了部分可能导致用户操作疑惑的逻辑。
+
 ###### v0.2.2 2016-12-14
 * 1. 为了符合 iOS ATS 安全策略，对相关接口做了相应的调整；
 * 2. 针对性能做了些许优化。
