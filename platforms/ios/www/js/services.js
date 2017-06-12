@@ -150,7 +150,7 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
 
                         var arrayObj = new Array("Tags" + loginResult.UserId);
                         window.plugins.jPushPlugin.setTags(arrayObj);
-
+                        console.log(arrayObj);
                         //上传设备ID
                         //console.log("Begin - JPushPlugin:registrationID is " + data);
                         //window.plugins.jPushPlugin.getRegistrationID(onGetRegistradionID);

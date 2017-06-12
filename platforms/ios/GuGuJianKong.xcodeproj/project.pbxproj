@@ -119,6 +119,7 @@
 		32EBE37A37B749F7A3161458 /* CDVConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVConnection.m; path = "cordova-plugin-network-information/CDVConnection.m"; sourceTree = "<group>"; };
 		36A7AA6B4B9B48EE81CAA3FE /* CDVReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVReachability.m; path = "cordova-plugin-network-information/CDVReachability.m"; sourceTree = "<group>"; };
 		4254E4C61BBAA804001A8D14 /* buguniao.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buguniao.wav; sourceTree = "<group>"; };
+		42B753751EE10FB500CA895D /* GuGuJianKong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = GuGuJianKong.entitlements; path = GuGuJianKong/GuGuJianKong.entitlements; sourceTree = "<group>"; };
 		4ABF28B046604CC680712A9F /* CDVInAppBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVInAppBrowser.m; path = org.apache.cordova.inappbrowser/CDVInAppBrowser.m; sourceTree = "<group>"; };
 		4BAD231D303A46649CAF6AF8 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; path = PushConfig.plist; sourceTree = "<group>"; };
 		4E7767109B294249835C8829 /* CDVReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVReachability.h; path = "cordova-plugin-network-information/CDVReachability.h"; sourceTree = "<group>"; };
@@ -211,6 +212,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				42B753751EE10FB500CA895D /* GuGuJianKong.entitlements */,
 				4254E4C61BBAA804001A8D14 /* buguniao.wav */,
 				EB87FDF41871DAF40020F90C /* config.xml */,
 				EB87FDF31871DA8E0020F90C /* www */,
@@ -388,6 +390,11 @@
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = M83N3W9JC3;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -524,6 +531,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = GuGuJianKong/GuGuJianKong.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: PengYuan Qiu (M83N3W9JC3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: PengYuan Qiu (M83N3W9JC3)";
 				COPY_PHASE_STRIP = NO;
@@ -561,8 +569,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gugujiankong.iosapp;
 				PRODUCT_NAME = GuGuJianKong;
-				PROVISIONING_PROFILE = "0ad4205a-8472-4cdb-9d33-cb2934309f22";
-				PROVISIONING_PROFILE_SPECIFIER = "gugujiankong-0920";
+				PROVISIONING_PROFILE = "2b6e716e-5580-4435-b88d-67e50e776a4d";
+				PROVISIONING_PROFILE_SPECIFIER = "gugu-dis-appstore-profile";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -572,6 +580,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = GuGuJianKong/GuGuJianKong.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: PengYuan Qiu (M83N3W9JC3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: PengYuan Qiu (M83N3W9JC3)";
 				COPY_PHASE_STRIP = YES;
@@ -607,8 +616,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gugujiankong.iosapp;
 				PRODUCT_NAME = GuGuJianKong;
-				PROVISIONING_PROFILE = "0ad4205a-8472-4cdb-9d33-cb2934309f22";
-				PROVISIONING_PROFILE_SPECIFIER = "gugujiankong-0920";
+				PROVISIONING_PROFILE = "2b6e716e-5580-4435-b88d-67e50e776a4d";
+				PROVISIONING_PROFILE_SPECIFIER = "gugu-dis-appstore-profile";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
