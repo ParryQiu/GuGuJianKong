@@ -64,6 +64,6 @@ Available under the GPL v3 license. See the [LICENSE file](http://choosealicense
 项目开源许可证使用 GPL v3，协议详情请查看 [LICENSE 文件](http://choosealicense.com/licenses/gpl-3.0/ "LICENSE 文件")。
 
 
-# 想学习 Ionic 3 的开发？
+# 想学习最新的 Ionic 3 的开发？
 
 来慕课网看我的 [快速上手 Ionic 3 开发问答社区 App](http://coding.imooc.com/class/163.html) 视频教程。
