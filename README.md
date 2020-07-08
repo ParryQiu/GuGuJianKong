@@ -1,4 +1,11 @@
 # GuGuJianKong / 咕咕监控
+
+## v2.0.0 Release / 发布
+
+![v2.0.0](https://www.gugujiankong.com/assets/images/app_2.png)
+
+[https://www.gugujiankong.com/#features](https://www.gugujiankong.com/#features)
+
 ## Intro / 简介
 GuGuJianKong App for website online monitor, implemented using [Ionic Framework](http://ionicframework.com/ "Ionic official website").
 
