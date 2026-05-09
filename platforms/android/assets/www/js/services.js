@@ -189,7 +189,11 @@ angular.module('starter.services', ['ionic.ion.imageCacheFactory'])
             var deferred = $q.defer();
             var promise = deferred.promise;
             //ajax请求
+<<<<<<< HEAD
             $http.jsonp("https://api.gugujiankong.com/account/Register?email=" + email + "&username=" + name + "&password=" + password + "&callback=JSON_CALLBACK")
+=======
+            $http.jsonp("http://api.gugujiankong.com/account/RegisterForPlatform?email=" + email + "&username=" + name + "&password=" + password + "&platform=GuGuJianKongGYApp&callback=JSON_CALLBACK")
+>>>>>>> a3b6b66 (chore(worktree): save local changes)
                 .success(function(response) {
                     if (response == 1) {
                         deferred.resolve('register successfully');

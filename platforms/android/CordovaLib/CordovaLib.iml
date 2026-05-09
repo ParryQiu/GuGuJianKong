@@ -16,7 +16,10 @@
         </afterSyncTasks>
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="RES_FOLDERS_RELATIVE_PATH" value="" />
+<<<<<<< HEAD
         <option name="PROJECT_TYPE" value="1" />
+=======
+>>>>>>> a3b6b66 (chore(worktree): save local changes)
       </configuration>
     </facet>
   </component>

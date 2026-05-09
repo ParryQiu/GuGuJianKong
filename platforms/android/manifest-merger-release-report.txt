@@ -39,7 +39,11 @@ ADDED from AndroidManifest.xml:5:5
 	android:label
 		ADDED from AndroidManifest.xml:5:83
 	android:supportsRtl
+<<<<<<< HEAD
 		ADDED from AndroidManifest.xml:5:104
+=======
+		ADDED from AndroidManifest.xml:5:102
+>>>>>>> a3b6b66 (chore(worktree): save local changes)
 	android:hardwareAccelerated
 		ADDED from AndroidManifest.xml:5:18
 	android:icon
